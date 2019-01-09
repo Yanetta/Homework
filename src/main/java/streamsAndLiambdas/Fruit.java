@@ -13,6 +13,8 @@ public class Fruit {
 	private int price;
 	private List<Vitamins> vitamins;
 
+
+
 	public Fruit(FruitType fruitType, int dayToLive, LocalDate deliveryDate, int price, List<Vitamins> vitamins) {
 		this.fruitType = fruitType;
 		this.dayToLive = dayToLive;
