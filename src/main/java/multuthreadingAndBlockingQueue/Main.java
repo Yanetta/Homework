@@ -79,7 +79,7 @@ public class Main {
         }
 
         System.out.println("BlockingQueue examples");
-        BlockingQueue<Integer> bq = new LinkedBlockingQueue<>(1);
+        BlockingQueue<Integer> bq = new LinkedBlockingQueue<>(10);
 
         Producer producer = new Producer(bq);
         Consumer consumer = new Consumer(bq);
