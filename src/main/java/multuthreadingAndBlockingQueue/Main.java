@@ -86,6 +86,57 @@ public class Main {
 
         new Thread(producer).start();
         new Thread(consumer).start();
+        
+        InterestPayment interestPayment = new InterestPayment(account);
+        InterestInfo interestInfo = new InterestInfo(account);
+
+        new Thread(interestPayment).start();
+        new Thread(interestInfo).start();
     }
 }
+class InterestPayment implements Runnable {
+    private Account account;
+
+    public InterestPayment(Account account) {
+        this.account = account;
+    }
+
+    @Override
+    public void run() {
+        synchronized (account) {
+            for (int i = 0; i < 5; i++) {
+
+                long interest = account.getDollarBalance() * 20 / 100;
+                System.out.println("interest is " + interest);
+                account.setDollarBalance(interest + account.getDollarBalance());
+                System.out.println(account.getDollarBalance());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+}
+
+class InterestInfo implements Runnable {
+    private Account account;
+
+    public InterestInfo(Account account) {
+        this.account = account;
+    }
+
+    @Override
+    public void run() {
+        synchronized (account) {
+
+            System.out.println("You received interest and your dollar balance is: " + account.getDollarBalance());
+        }
+
+    }
+}
+
+
 
