@@ -7,7 +7,7 @@ public class Producer implements Runnable {
     private BlockingQueue <Integer> bq;
 
     public Producer(BlockingQueue <Integer> queue) {
-        this.bq = queue;
+        bq = queue;
     }
 
     public void run() {
