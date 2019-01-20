@@ -12,7 +12,7 @@ public class CallableClass implements Callable <Resource> {
     }
 
     @Override
-    public Resource call() throws Exception {
+    public Resource call() throws InterruptedException {
         System.out.println(name + "waiting");
         for (int i = 0; i < 5; i++) {
             res.increment();
