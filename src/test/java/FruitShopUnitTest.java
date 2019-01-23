@@ -5,11 +5,14 @@ import org.junit.*;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import static org.junit.Assert.assertNotNull;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.*;
 
 public class FruitShopUnitTest {
 
@@ -27,6 +30,7 @@ public class FruitShopUnitTest {
         strawberry = new Fruit(FruitType.STRAWBERRY, 13, LocalDate.of(2018, Month.DECEMBER, 20), 150, null);
         orange = new Fruit(FruitType.ORANGE, 58, LocalDate.of(2018, Month.DECEMBER, 17), 35, null);
     }
+
     @AfterClass
     public static void afterClass() {
         System.out.println("AfterClass");
@@ -54,9 +58,7 @@ public class FruitShopUnitTest {
         List<Fruit> expected = new ArrayList<>();
         expected.add(apple);
         expected.add(pear);
-
         List<Fruit> actual = fruitShop.allFresh(LocalDate.of(2019, Month.FEBRUARY, 28));
-
         assertEquals(expected, actual);
     }
 
@@ -66,8 +68,71 @@ public class FruitShopUnitTest {
         assertTrue(actual.size() == 0);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testAllFreshNull() {
+        fruitShop.allFresh(null);
+    }
 
 
+    @Test
+    public void testAllFruitOfFruitType() {
+        List<Fruit> expected = new ArrayList<>();
+        expected.add(apple);
+        List<Fruit> actual = fruitShop.allFruitOfFruitType(FruitType.APPLE);
+        assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testAllFruitOfFruitTypeNotNull() {
+        List<Fruit> actual = fruitShop.allFruitOfFruitType(FruitType.APPLE);
+        assertNotNull(actual);
+    }
+
+    @Test
+    public void testCheckByExpireDate() {
+        List<Fruit> expected = new ArrayList<>();
+        expected.add(apple);
+        expected.add(orange);
+        List<Fruit> actual = fruitShop.checkByExpireDate(50);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCheckByExpireDateNothing() {
+        List<Fruit> actual = fruitShop.checkByExpireDate(100);
+        assertTrue(actual.size() == 0);
+    }
+
+    @Test
+    public void testAllFreshAndFruitType() {
+        List<Fruit> expected = new ArrayList<>();
+        expected.add(orange);
+        List<Fruit> actual = fruitShop.allFreshAndFruitType(FruitType.ORANGE, LocalDate.of(2019, Month.JANUARY, 21));
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAllFreshAndFruitTypeNotNull() {
+        List<Fruit> actual = fruitShop.allFreshAndFruitType(FruitType.ORANGE, LocalDate.of(2019, Month.JANUARY, 21));
+        assertNotNull(actual);
+    }
+
+    @Test
+    public void testAllFreshAndFruitTypeNothing() {
+        List<Fruit> actual = fruitShop.allFreshAndFruitType(FruitType.ORANGE, LocalDate.of(2020, Month.JANUARY, 21));
+        assertTrue(actual.size() == 0);
+    }
+
+   
+    @Test
+    public void testReSetPricexRealizationNothing() {
+        List<Fruit> actual = fruitShop.reSetPricexRealization(50, 1, FruitType.ORANGE, FruitType.APPLE, FruitType.PEAR, FruitType.STRAWBERRY);
+        assertTrue(actual.size() == 0);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testReSetPricexRealizationNull() {
+        fruitShop.reSetPricexRealization(50, 1, null);
+    }
 
 }
