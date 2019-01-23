@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import static org.junit.Assert.assertNotNull;
 
 import static junit.framework.TestCase.*;
 
@@ -84,7 +85,7 @@ public class FruitShopUnitTest {
     @Test
     public void testAllFruitOfFruitTypeNotNull() {
         List<Fruit> actual = fruitShop.allFruitOfFruitType(FruitType.APPLE);
-        Assert.assertNotNull(actual);
+        assertNotNull(actual);
     }
 
     @Test
@@ -113,7 +114,7 @@ public class FruitShopUnitTest {
     @Test
     public void testAllFreshAndFruitTypeNotNull() {
         List<Fruit> actual = fruitShop.allFreshAndFruitType(FruitType.ORANGE, LocalDate.of(2019, Month.JANUARY, 21));
-        Assert.assertNotNull(actual);
+        assertNotNull(actual);
     }
 
     @Test
@@ -122,14 +123,7 @@ public class FruitShopUnitTest {
         assertTrue(actual.size() == 0);
     }
 
-    @Test
-    public void testReSetPricexRealizationFalse() {
-        List<Fruit> expected = new ArrayList<>();
-        expected.add(apple);
-        List<Fruit> actual = fruitShop.reSetPricexRealization(50, 3, FruitType.APPLE);
-        assertFalse(actual.size() == 0);
-    }
-
+   
     @Test
     public void testReSetPricexRealizationNothing() {
         List<Fruit> actual = fruitShop.reSetPricexRealization(50, 1, FruitType.ORANGE, FruitType.APPLE, FruitType.PEAR, FruitType.STRAWBERRY);
