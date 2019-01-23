@@ -44,16 +44,16 @@ public class stringWorkerTest {
         assertEquals(expected, actual);
     }
 
-//    @Test
-//    public void addStartAndEndUpperTest() {
-//
-//        doReturn("aaaBBB").when(stringChangerService).addStart("aaa", "BBB");
-//        when(lowerUpperService.toUpper("ccc")).thenReturn("UPPERVALUE");
-//        String expected = "aaaBBBCCC";
-//
-//        String actual = stringChangerService.addStartAndEndUpper("aaa", "BBB", "ccc");
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    public void addStartAndEndUpperTest() {
+
+        doReturn("aaaccc").when(stringChangerService).addStart("aaa", "ccc");
+        when(lowerUpperService.toUpper("bbb")).thenReturn("BBB");
+        String expected = "aaacccBBB";
+
+        String actual = stringChangerService.addStartAndEndUpper("aaa", "bbb", "ccc");
+        assertEquals(expected, actual);
+    }
 
     @Test
     public  void  testAddStartAndEndTotalLower(){
