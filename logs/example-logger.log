@@ -1,0 +1,20 @@
+DEBUG | 2019-01-22 21:54:46 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=5, b=2
+INFO  | 2019-01-22 21:54:46 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return 2
+DEBUG | 2019-01-22 21:54:46 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=3, b=0
+ERROR | 2019-01-22 21:54:46 | [main] calculator.Calculator	(Calculator.java:20) -- Exception when div working / by zero
+INFO  | 2019-01-22 21:54:46 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return -666
+DEBUG | 2019-01-22 21:56:48 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=5, b=2
+INFO  | 2019-01-22 21:56:48 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return 2
+DEBUG | 2019-01-22 21:56:48 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=3, b=0
+ERROR | 2019-01-22 21:56:48 | [main] calculator.Calculator	(Calculator.java:20) -- Exception when div working / by zero
+INFO  | 2019-01-22 21:56:48 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return -666
+DEBUG | 2019-01-22 22:01:21 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=5, b=2
+INFO  | 2019-01-22 22:01:21 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return 2
+DEBUG | 2019-01-22 22:01:21 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=3, b=0
+ERROR | 2019-01-22 22:01:21 | [main] calculator.Calculator	(Calculator.java:20) -- Exception when div working / by zero
+INFO  | 2019-01-22 22:01:21 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return -666
+DEBUG | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=5, b=2
+INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return 2
+DEBUG | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=3, b=0
+ERROR | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:20) -- Exception when div working / by zero
+INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return -666
