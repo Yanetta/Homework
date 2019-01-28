@@ -21,9 +21,8 @@ public class JSONviaMarshaller {
 
         try {
             File file = new File("src/main/resources/group.json");
-
-            JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory.createContext(new Class[] {MateGroup.class}, null );
-
+            System.setProperty("javax.xml.bind.context.factory", "org.eclipse.persistence.jaxb.JAXBContextFactory");
+            JAXBContext jaxbContext = JAXBContext.newInstance(MateGroup.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.setProperty(MarshallerProperties.MEDIA_TYPE, APPLICATION_JSON);
