@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class Student extends Person {
+    private int mark;
 
     @Override
     @XmlTransient
@@ -23,8 +24,16 @@ public class Student extends Person {
 
     }
 
-    public Student(String name, String surname, int yearOfBorn) {
+    public Student(String name, String surname, int yearOfBorn, int mark) {
         super(name, surname, yearOfBorn);
+        this.mark = mark;
     }
 
+    public int getMark() {
+        return mark;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
+    }
 }
