@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  * @author spasko
  */
 @XmlTransient
-@XmlSeeAlso({ Student.class, Teacher.class, HumanResource.class })
+@XmlSeeAlso({ Student.class, Teacher.class, HumanResource.class})
 @JsonInclude(value = Include.NON_EMPTY)
 public class Person implements Serializable {
     private String name;

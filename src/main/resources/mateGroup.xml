@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MateGroup>
     <teacher>
+        <daysOfVacation>30</daysOfVacation>
         <name>Serhii</name>
         <salary>666</salary>
+        <subject>Java</subject>
         <surname>Pasko</surname>
         <yearOfBorn>1988</yearOfBorn>
     </teacher>
     <students>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="student">
+            <mark>5</mark>
             <name>Iza</name>
             <yearOfBorn>1997</yearOfBorn>
         </student>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="student">
+            <mark>4</mark>
             <name>Abram</name>
             <yearOfBorn>1998</yearOfBorn>
         </student>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="teacher">
+            <daysOfVacation>25</daysOfVacation>
             <name>Moisha</name>
             <salary>666</salary>
+            <subject>Python</subject>
             <surname>Stefan</surname>
             <yearOfBorn>1990</yearOfBorn>
         </student>
@@ -28,17 +34,35 @@
     </room>
     <hrs>
         <humanResource>
-            <name>Karmen</name>
-            <startWorkYear>2015</startWorkYear>
-            <surname></surname>
-            <yearOfBorn>1990</yearOfBorn>
-        </humanResource>
-        <humanResource>
             <name>Efiria</name>
             <startWorkYear>2016</startWorkYear>
             <surname></surname>
             <yearOfBorn>1989</yearOfBorn>
         </humanResource>
+        <humanResource>
+            <name>Karmen</name>
+            <startWorkYear>2015</startWorkYear>
+            <surname></surname>
+            <yearOfBorn>1990</yearOfBorn>
+        </humanResource>
     </hrs>
     <id>18122018</id>
+    <rector>
+        <awards>Grammy</awards>
+        <budjet>10000</budjet>
+    </rector>
+    <books>
+        <book>
+            <name>Zakhar Berkut</name>
+            <pages>300</pages>
+        </book>
+        <book>
+            <name>Kobzar</name>
+            <pages>500</pages>
+        </book>
+        <book>
+            <name>Kolobok</name>
+            <pages>10</pages>
+        </book>
+    </books>
 </MateGroup>

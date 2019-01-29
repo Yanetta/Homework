@@ -9,22 +9,28 @@
     "name" : "Serhii",
     "surname" : "Pasko",
     "yearOfBorn" : 1988,
-    "salary" : 666
+    "salary" : 666,
+    "subject" : "Java",
+    "daysOfVacation" : 30
   },
   "students" : [ {
     "type" : "student",
     "name" : "Iza",
-    "yearOfBorn" : 1997
+    "yearOfBorn" : 1997,
+    "mark" : 5
   }, {
     "type" : "student",
     "name" : "Abram",
-    "yearOfBorn" : 1998
+    "yearOfBorn" : 1998,
+    "mark" : 4
   }, {
     "type" : "teacher",
     "name" : "Moisha",
     "surname" : "Stefan",
     "yearOfBorn" : 1990,
-    "salary" : 666
+    "salary" : 666,
+    "subject" : "Python",
+    "daysOfVacation" : 25
   } ],
   "humanResources" : [ {
     "name" : "Efiria",
@@ -34,6 +40,23 @@
     "name" : "Karmen",
     "yearOfBorn" : 1990,
     "startWorkYear" : 2015
+  } ],
+  "rector" : {
+    "awards" : "Grammy",
+    "budjet" : 10000
+  },
+  "books" : [ {
+    "type" : "book",
+    "name" : "Zakhar Berkut",
+    "pages" : 300
+  }, {
+    "type" : "book",
+    "name" : "Kobzar",
+    "pages" : 500
+  }, {
+    "type" : "book",
+    "name" : "Kolobok",
+    "pages" : 10
   } ],
   "id" : 18122018
 }
