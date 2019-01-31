@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 
 @XmlRootElement(name = "MateGroup")
-//@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.FIELD)
 @JsonPropertyOrder({ "room",  "teacher", "students", "humanResources", "rector", "books"})
 public class MateGroup implements Serializable {
     @XmlElement(type = Teacher.class)
