@@ -12,28 +12,23 @@ import java.util.stream.Collectors;
 
 @WebService(endpointInterface = "workWithSOAP.MateGroupService")
 public class MateGroupServiceImpl implements MateGroupService {
-    //public MateGroup mateGroup = MateGroup.mateGroupExampleCreator();
-    private Map<Integer, MateGroup> mateGroups = Arrays.asList(MateGroup.mateGroupExampleCreator()).stream()
-            .collect(Collectors.toMap(MateGroup::getId, Function.identity()));
+    public MateGroup mateGroup = MateGroup.mateGroupExampleCreator();
+
     @Override
-    public MateGroup getMateGroup(Integer groupId) {
-        return mateGroups.get(groupId);
+    public MateGroup getMateGroup() {
+        return mateGroup;
     }
 
     @Override
-    public MateGroup addStudents(Integer groupId, List<Person> person) {
-        //mateGroup.getStudents().addAll(person);
-        MateGroup mateGroup = mateGroups.get(groupId);
-        if (mateGroup != null) {
-            mateGroup.getStudents().addAll(person);
+    public MateGroup addStudents(List<Person> person) {
+        mateGroup.getStudents().addAll(person);
+
             return mateGroup;
-        } else
-            return null;
     }
 
-//    @Override
-//    public MateGroup changeTeacher(String name) {
-//        mateGroup.getTeacher().setName(name);
-//        return mateGroup;
-//    }
+    @Override
+    public MateGroup changeTeacher(String name) {
+        mateGroup.getTeacher().setName(name);
+        return mateGroup;
+    }
 }

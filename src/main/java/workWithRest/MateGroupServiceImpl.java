@@ -23,20 +23,6 @@ public class MateGroupServiceImpl implements MateGroupService {
     public javax.ws.rs.core.Response getMateGroup() {
         return javax.ws.rs.core.Response.status(javax.ws.rs.core.Response.Status.OK).entity(mateGroup).type(MediaType.APPLICATION_JSON).build();
     }
-//
-//    @Override
-//    @PUT
-//    @Path("/{groupId}")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response addStudents(@PathParam("groupId") int groupId, Person person) {
-//        if (groupId == mateGroup.getId()) {
-//            mateGroup.getStudents().addAll(Arrays.asList(person));
-//            return Response.status(Status.ACCEPTED).entity(mateGroup).type(MediaType.APPLICATION_JSON).build();
-//        }
-//        return Response.status(Status.NOT_FOUND).build();
-//    }
-//
 
     @Override
     @PUT
