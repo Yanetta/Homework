@@ -23,16 +23,19 @@ import javax.ws.rs.core.Response.Status;
                 HttpURLConnection conn = getMateGroup();
                 showInfo(conn);
 
-                conn = addStudent("123");
+//                conn = addStudent("123");
+//                showInfo(conn);
+
+//                conn = addStudent("18122018");
+//                showInfo(conn);
+
+                conn = changeTeacher("18122018");
                 showInfo(conn);
 
-                conn = addStudent("18122018");
-                showInfo(conn);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
         private static void showInfo(HttpURLConnection conn) throws IOException {
@@ -53,20 +56,35 @@ import javax.ws.rs.core.Response.Status;
             conn.disconnect();
         }
 
-        private static HttpURLConnection addStudent(String pathParam)
+//        private static HttpURLConnection addStudent(String pathParam)
+//                throws MalformedURLException, IOException, ProtocolException {
+//            URL url = new URL("http://localhost:9998/rs/mate/" + pathParam);
+//            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//            conn.setDoOutput(true);
+//            conn.setRequestMethod("PUT");
+//            conn.setRequestProperty("Content-Type", "application/json");
+//            String input = "{\"name\": \"Iza\",\"yearOfBorn\": 1997	}";
+//
+//            OutputStream os = conn.getOutputStream();
+//            os.write(input.getBytes());
+//            os.flush();
+//            return conn;
+//        }
+        private static HttpURLConnection changeTeacher(String pathParam)
                 throws MalformedURLException, IOException, ProtocolException {
             URL url = new URL("http://localhost:9998/rs/mate/" + pathParam);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
-            String input = "{\"name\": \"Iza\",\"yearOfBorn\": 1997	}";
+            String input = "Sasha";
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
             os.flush();
             return conn;
         }
+
 
         private static HttpURLConnection getMateGroup() throws MalformedURLException, IOException, ProtocolException {
             URL url = new URL("http://localhost:9998/rs/mate/");
