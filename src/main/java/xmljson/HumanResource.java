@@ -1,9 +1,13 @@
 package xmljson;
 
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  * @author spasko
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class HumanResource extends Person {
     private int startWorkYear;
 
