@@ -107,7 +107,6 @@ public class MateGroupServiceImpl implements MateGroupService {
     @Override
     @PUT
     @Path("/hrs/{startWorkYear}")
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response changeHR(@PathParam("startWorkYear") int startWorkYear, @PathParam("groupId") int groupId, @QueryParam("newStartWorkYear") int newStartWorkYear) {
         MateGroup mateGroup = mateGroups.get(groupId);
