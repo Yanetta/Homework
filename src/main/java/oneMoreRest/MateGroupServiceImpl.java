@@ -94,7 +94,6 @@ public class MateGroupServiceImpl implements MateGroupService {
     @Override
     @DELETE
     @Path("/hrs/{name}")
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteHR(@PathParam("name") String name, @PathParam("groupId") int groupId) {
         MateGroup mateGroup = mateGroups.get(groupId);
