@@ -78,7 +78,7 @@ public class MateGroupServiceImpl implements MateGroupService {
     }
 
     @Override
-    @PUT
+    @POST
     @Path("/hrs")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
