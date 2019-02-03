@@ -1,0 +1,70 @@
+{
+   "MateGroup" : {
+      "teacher" : {
+         "type" : "teacher",
+         "surname" : "Pasko",
+         "yearOfBorn" : 1988,
+         "daysOfVacation" : 30,
+         "name" : "Serhii",
+         "salary" : 666,
+         "subject" : "Java"
+      },
+      "students" : {
+         "student" : [ {
+            "type" : "student",
+            "name" : "Iza",
+            "yearOfBorn" : 1997,
+            "mark" : 5
+         }, {
+            "type" : "student",
+            "name" : "Abram",
+            "yearOfBorn" : 1998,
+            "mark" : 4
+         }, {
+            "type" : "teacher",
+            "surname" : "Stefan",
+            "yearOfBorn" : 1990,
+            "daysOfVacation" : 25,
+            "name" : "Moisha",
+            "salary" : 666,
+            "subject" : "Python"
+         } ]
+      },
+      "room" : {
+         "city" : "Kiyv",
+         "street" : "Tarasivska",
+         "house" : 16,
+         "number" : 28
+      },
+      "hrs" : {
+         "humanResource" : [ {
+            "name" : "Efiria",
+            "surname" : "",
+            "yearOfBorn" : 1989,
+            "startWorkYear" : 2016
+         }, {
+            "name" : "Karmen",
+            "surname" : "",
+            "yearOfBorn" : 1990,
+            "startWorkYear" : 2015
+         } ]
+      },
+      "rector" : {
+         "awards" : "Grammy",
+         "budjet" : 10000
+      },
+      "books" : {
+         "book" : [ {
+            "name" : "Zakhar Berkut",
+            "pages" : 300
+         }, {
+            "name" : "Kobzar",
+            "pages" : 500
+         }, {
+            "name" : "Kolobok",
+            "pages" : 10
+         } ]
+      },
+      "id" : 18122018
+   }
+}
