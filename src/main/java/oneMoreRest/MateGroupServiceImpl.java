@@ -140,7 +140,9 @@ public class MateGroupServiceImpl implements MateGroupService {
     public Response getCertainHr(@PathParam("name") String name, @PathParam("groupId") int groupId) {
         MateGroup mateGroup = mateGroups.get(groupId);
         if (mateGroup != null) {
-            return Response.status(Status.OK).entity(mateGroup.getHumanResources().stream().filter(as -> as.getName().equals(name)).findAny().get()).type(MediaType.APPLICATION_JSON).build();
+            //return Response.status(Status.OK).entity(mateGroup.getHumanResources().stream().filter(as -> as.getName().equals(name)).collect(Collectors.toSet()).type(MediaType.APPLICATION_JSON).build();
+            return Response.status(Status.OK).entity(mateGroup.getHumanResources().stream().filter(humanResource1 -> humanResource1.getName().
+                    equals(name)).collect(Collectors.toSet())).type(MediaType.APPLICATION_JSON).build();
         }
         return Response.status(Status.NOT_FOUND).build();
     }
