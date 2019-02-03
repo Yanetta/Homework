@@ -151,6 +151,5 @@ public class MateGroup implements Serializable {
 
         return mateGroup;
     }
-
 }
 
