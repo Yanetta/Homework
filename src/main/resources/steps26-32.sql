@@ -95,7 +95,8 @@ SELECT
     order_num,
     amount,
     company,
-    name city
+    name,
+    city
 FROM
     orders      ord
     INNER JOIN customers   cu ON ord.cust = cu.cust_num
