@@ -1,18 +1,4 @@
 
-
-SELECT DISTINCT
-    company
-FROM
-    customers   cust
-    INNER JOIN orders      ord ON cust.cust_rep = ord.rep
-    INNER JOIN products    pr ON pr.product_id = ord.product
-WHERE
-    pr.description LIKE '%A%'
-    OR pr.description LIKE '%a%'
-    OR pr.description LIKE '%A%'
-    OR pr.description LIKE '%А%'
-    OR pr.description LIKE '%а%';
-
 SELECT DISTINCT
     company
 FROM
