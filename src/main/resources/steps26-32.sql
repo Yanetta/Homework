@@ -156,10 +156,8 @@ SELECT
     emps.name,
     mgrs.name
 FROM
-    salesreps   emps,
-    salesreps   mgrs
-WHERE
-    emps.manager = mgrs.empl_num;
+    salesreps   emps 
+    INNER JOIN salesreps   mgrs on emps.manager = mgrs.empl_num;
 
 SELECT
     salesreps.name,
@@ -169,13 +167,11 @@ FROM
     INNER JOIN salesreps mgrs ON salesreps.manager = mgrs.empl_num;
 
 SELECT
-    salesreps.name,
+    sal.name,
     mgrs.name
 FROM
-    salesreps,
-    salesreps mgrs
-WHERE
-    salesreps.manager = mgrs.empl_num;
+    salesreps sal 
+    INNER JOIN salesreps mgrs on sal.manager = mgrs.empl_num;
 
 SELECT
     salesreps.name,
