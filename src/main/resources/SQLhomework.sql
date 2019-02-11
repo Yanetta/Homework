@@ -205,7 +205,7 @@ FROM
 GROUP BY
     product
 HAVING
-    COUNT(product) > 2;
+    COUNT(product) > 3;
 
 
 -- Вивести офіси в яких працює більше трьох менеджерів
@@ -376,3 +376,153 @@ GROUP BY
     company
 HAVING
     COUNT(mfr_id) > 4;
+    
+    
+    
+    
+    
+SELECT
+    AVG(amount)
+FROM
+    orders;
+
+SELECT
+    s.empl_num,
+    s.name,
+    SUM(amount)
+FROM
+    orders      o
+    INNER JOIN salesreps   s ON s.empl_num = o.rep
+GROUP BY
+    s.empl_num,
+    s.name;
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Cindy',
+    'Brown',
+    'Blue'
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Louise',
+    NULL,
+    'Blue'
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Harry',
+    NULL,
+    'Blue'
+);
+
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Samantha',
+    NULL,
+    NULL
+);
+
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Joanne',
+    NULL,
+    NULL
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'George',
+    'Brown',
+    NULL
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Mary',
+    'Brown',
+    NULL
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Paula',
+    'Brown',
+    NULL
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Kevin',
+    'Brown',
+    NULL
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Joel',
+    'Brown',
+    'Brown'
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Susan',
+    'Blonde',
+    'Blue'
+);
+
+INSERT INTO coloris (
+    nm,
+    hair,
+    eyes
+) VALUES (
+    'Marie',
+    'Blonde',
+    'Blue'
+);
+        
+    
+SELECT
+    description
+FROM
+    products
+WHERE
+    description LIKE '%а%а%а%';
