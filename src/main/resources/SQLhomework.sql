@@ -526,3 +526,31 @@ FROM
     products
 WHERE
     description LIKE '%а%а%а%';
+    
+    
+    --Вивести скільки мінімально і максимально замовлень (ордерів) виконували менеджери що мають в прямому підпорядкуванні більше двух людей  
+SELECT
+    MIN(ordercount),
+    MAX(ordercount)
+FROM
+    (
+        SELECT
+            manager,
+            COUNT(orders.order_num) AS ordercount
+        FROM
+            (
+                SELECT
+                    manager,
+                    COUNT(manager)
+                FROM
+                    salesreps
+                GROUP BY
+                    manager
+                HAVING
+                    COUNT(manager) > 2
+            )
+            INNER JOIN orders ON manager = orders.rep
+        GROUP BY
+            manager
+    );
+
