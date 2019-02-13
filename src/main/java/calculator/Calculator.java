@@ -3,6 +3,8 @@ package calculator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.Connection;
+
 /**
  * @author spasko
  */
@@ -22,5 +24,6 @@ public class Calculator {
 		LOG.info("Method div return {}", result);
 		return result;
 	}
+
 
 }
