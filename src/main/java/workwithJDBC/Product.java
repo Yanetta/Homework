@@ -54,4 +54,15 @@ public class Product {
     public void setQtyOnHand(BigDecimal qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "mfrID='" + mfrID + '\'' +
+                ", productID='" + productID + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", qtyOnHand=" + qtyOnHand +
+                '}';
+    }
 }
