@@ -62,4 +62,16 @@ public class Order {
     public void setMfr(String mfr) {
         this.mfr = mfr;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "product=" + product +
+                ", orderNum=" + orderNum +
+                ", orderDate=" + orderDate +
+                ", amount=" + amount +
+                ", qty=" + qty +
+                ", mfr='" + mfr + '\'' +
+                '}';
+    }
 }
