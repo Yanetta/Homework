@@ -50,4 +50,160 @@ public class CustomersDaoImpl implements CustomersDao {
         connection.close();
         return customers;
     }
+
+
+    @Override
+    public boolean insertCustomer(BigDecimal cust_num, BigDecimal credit_limit) {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        Boolean isRowInserted = false;
+        try {
+            connection = Pool.getConnection();
+            stmt = connection.prepareStatement("INSERT INTO customers (cust_num, credit_limit) VALUES (?, ?)");
+            stmt.setBigDecimal(1, cust_num);
+            stmt.setBigDecimal(2, credit_limit);
+            isRowInserted = stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isRowInserted;
+
+    }
+
+    @Override
+    public boolean insertCustomer1(Customers customer) {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        Boolean isRowInserted = false;
+        try {
+            connection = Pool.getConnection();
+            stmt = connection.prepareStatement("INSERT INTO customers (cust_num, company, cust_rep, credit_limit) VALUES (?, ?, ?, ?)");
+            stmt.setBigDecimal(1, customer.getCustNum());
+            stmt.setString(2, customer.getCompany());
+            stmt.setBigDecimal(3, customer.getCustRep());
+            stmt.setBigDecimal(4, customer.getCreditLimit());
+            isRowInserted = stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isRowInserted;
+
+    }
+
+
+    @Override
+    public boolean updateCustomer(BigDecimal cust_num) {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        Boolean isRowUpdated = false;
+        try {
+            connection = Pool.getConnection();
+            stmt = connection.prepareStatement("update customers set credit_limit = 888 where cust_num = ?");
+            stmt.setBigDecimal(1, cust_num);
+            isRowUpdated = stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isRowUpdated;
+    }
+
+    @Override
+    public boolean updateCustomer1(Customers customer, BigDecimal cust_num) {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        Boolean isRowUpdated = false;
+        try {
+            connection = Pool.getConnection();
+            stmt = connection.prepareStatement("update customers set cust_num = ?, company = ?, cust_rep = ?,credit_limit = ? where cust_num = ?");
+            stmt.setBigDecimal(1, customer.getCustNum());
+            stmt.setString(2, customer.getCompany());
+            stmt.setBigDecimal(3, customer.getCustRep());
+            stmt.setBigDecimal(4, customer.getCreditLimit());
+            stmt.setBigDecimal(5, cust_num);
+
+            isRowUpdated = stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isRowUpdated;
+    }
+
+
+    @Override
+    public boolean deleteCustomer(BigDecimal cust_num) {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        Boolean isRowDeleted = false;
+        try {
+            connection = Pool.getConnection();
+
+            stmt = connection.prepareStatement("DELETE FROM customers where cust_num = ?");
+            stmt.setBigDecimal(1, cust_num);
+
+            isRowDeleted = stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isRowDeleted;
+    }
 }
