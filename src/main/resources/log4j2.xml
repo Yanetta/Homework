@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
-<xml status="WARN" monitorInterval="30">
+<xml status="DEBUG" monitorInterval="30">
 	<Properties>
 		<Property name="LOG_PATTERN">
 			%d{yyyy-MM-dd HH:mm:ss} %-5p %C{3}:%L -- %m%n
