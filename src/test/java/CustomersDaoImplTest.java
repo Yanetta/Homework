@@ -43,7 +43,7 @@ public class CustomersDaoImplTest {
     }
 
     @Test
-    public void test2InsertCustomer1() throws SQLException {
+    public void test2InsertWholeCustomer() throws SQLException {
         System.out.println("testInsertCustomer1 ____________________");
         Customers customer = new Customers();
         customer.setCustNum(BigDecimal.valueOf(4444));
@@ -58,11 +58,11 @@ public class CustomersDaoImplTest {
     @Test
     public void test3UpdateCustomer() throws SQLException {
         System.out.println("testUpdateCustomer ____________________");
-        boolean ins = customersDao.updateCustomer(BigDecimal.valueOf(4444));
+        boolean ins = customersDao.updateCustomer(BigDecimal.valueOf(3333));
         assertTrue(ins);
     }
     @Test
-    public void test4UpdateCustomer1() throws SQLException {
+    public void test4UpdateWholeCustomer() throws SQLException {
         System.out.println("testUpdateCustomer1 ____________________");
         Customers customer = new Customers();
         customer.setCustNum(BigDecimal.valueOf(8888));
@@ -76,6 +76,6 @@ public class CustomersDaoImplTest {
     @Test
     public void test5DeleteCustomer() throws SQLException {
         System.out.println("testDeleteeCustomer ____________________");
-        assertTrue(customersDao.deleteCustomer(new BigDecimal(4444)));
+        assertTrue(customersDao.deleteCustomer(new BigDecimal(3333)));
     }
 }
