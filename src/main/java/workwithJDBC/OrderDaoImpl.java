@@ -1,10 +1,7 @@
 package workwithJDBC;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +9,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Set<Order> getAllOrders() throws SQLException {
-        Connection connection = MakeConnection.getConnection();
+        Connection connection = Pool.getConnection();
         PreparedStatement stmt = connection.prepareStatement("Select * from orders");
         ResultSet rs = stmt.executeQuery();
         Set<Order> orders = new HashSet<>();
@@ -49,7 +46,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Set<Order> getAllOrdersInnerJoin() throws SQLException {
-        Connection connection = MakeConnection.getConnection();
+        Connection connection = Pool.getConnection();
         PreparedStatement stmt = connection.prepareStatement("Select * from orders inner join products on orders.product = products.product_id");
         ResultSet rs = stmt.executeQuery();
         Set<Order> orders = new HashSet<>();
@@ -77,14 +74,10 @@ public class OrderDaoImpl implements OrderDao {
         return orders;
     }
 
-    //Написати реалызацыю getAllOrders з продуктами через два селекта і через джоін (одним селектом) (edited)
-//    Парні в списку - модель таблиці Сustomers
-//    зробить селект всіх і по якомусь полю декількох
-//    ревьюрер +3
     @Override
     public Order findOrderById(BigDecimal id) throws SQLException {
 
-        Connection connection = MakeConnection.getConnection();
+        Connection connection = Pool.getConnection();
         PreparedStatement stmt = connection.prepareStatement("Select * from orders where order_num = ?");
         stmt.setBigDecimal(1, id);
         ResultSet rs = stmt.executeQuery();
@@ -105,18 +98,61 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean insertOrder(Order order) throws SQLException {
+    public boolean insertOrder(BigDecimal orderNum, BigDecimal qty) throws SQLException {
+        Connection connection = Pool.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO orders (order_num, qty) VALUES (?, ?)");
+        stmt.setBigDecimal(1, orderNum);
+        stmt.setBigDecimal(2, qty);
+        if (stmt.executeUpdate() > 0) {
+            return true;
+        }
+        ;
+        stmt.close();
+        connection.close();
+        return false;
+    }
+
+
+    @Override
+    public boolean updateOrder(BigDecimal orderNum) throws SQLException {
+        Connection connection = Pool.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("update orders set qty = 666 where order_num = ?");
+        stmt.setBigDecimal(1, orderNum);
+        stmt.executeUpdate();
+        if (stmt.executeUpdate() > 0) {
+            return true;
+        }
+        ;
+        stmt.close();
+        connection.close();
         return false;
     }
 
     @Override
-    public boolean updateOrder(Order order) throws SQLException {
+    public boolean deleteOrder(BigDecimal orderNum) throws SQLException {
+        Connection connection = Pool.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM orders where order_num = ?");
+        stmt.setBigDecimal(1,  orderNum);
+
+        stmt.executeUpdate();
+        if (stmt.executeUpdate() > 0) {
+            return true;
+        }
+        ;
+        stmt.close();
+        connection.close();
         return false;
     }
 
-    @Override
-    public boolean deleteOrder(BigDecimal id) throws SQLException {
-        return false;
+    private void showMetaData(ResultSet rs) throws SQLException {
+        ResultSetMetaData resultSetMetaData = rs.getMetaData();
+        int columnCount = resultSetMetaData.getColumnCount();
+        for (int i = 1; i <= columnCount; ++i) {
+            System.out.println("************");
+            System.out.println("Column Name : " + resultSetMetaData.getColumnName(i));
+            System.out.println("Column Type : " + resultSetMetaData.getColumnType(i));
+            System.out.println("Column Class Name : " + resultSetMetaData.getColumnClassName(i));
+            System.out.println("Column Type Name : " + resultSetMetaData.getColumnTypeName(i));
+        }
     }
-
 }
