@@ -69,10 +69,6 @@ public class CustomersDaoImpl implements CustomersDao {
         } finally {
             try {
                 stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -83,7 +79,7 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
     @Override
-    public boolean insertCustomer1(Customers customer) {
+    public boolean insertWholeCustomer(Customers customer) {
         Connection connection = null;
         PreparedStatement stmt = null;
         Boolean isRowInserted = false;
@@ -101,10 +97,6 @@ public class CustomersDaoImpl implements CustomersDao {
         } finally {
             try {
                 stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -131,10 +123,6 @@ public class CustomersDaoImpl implements CustomersDao {
         } finally {
             try {
                 stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -144,7 +132,7 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
     @Override
-    public boolean updateCustomer1(Customers customer, BigDecimal cust_num) {
+    public boolean updateWholeCustomer(Customers customer, BigDecimal cust_num) {
         Connection connection = null;
         PreparedStatement stmt = null;
         Boolean isRowUpdated = false;
@@ -164,10 +152,6 @@ public class CustomersDaoImpl implements CustomersDao {
         } finally {
             try {
                 stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -195,10 +179,6 @@ public class CustomersDaoImpl implements CustomersDao {
         } finally {
             try {
                 stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
