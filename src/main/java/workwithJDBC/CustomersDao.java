@@ -1,6 +1,7 @@
 package workwithJDBC;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface CustomersDao {
     boolean updateWholeCustomer(Customers customer, BigDecimal cust_num) throws SQLException;
 
     boolean deleteCustomer(BigDecimal cust_num) throws SQLException;
+
+    boolean deleteAnotherCustomer(Customers customer) throws SQLException;
 }

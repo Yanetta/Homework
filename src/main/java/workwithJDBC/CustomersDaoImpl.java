@@ -30,6 +30,7 @@ public class CustomersDaoImpl implements CustomersDao {
         return customers;
     }
 
+
     @Override
     public List<Customers> findCustomersByCreditLimit(BigDecimal creditLimit) throws SQLException {
         Connection connection = MakeConnection.getConnection();
@@ -160,7 +161,6 @@ public class CustomersDaoImpl implements CustomersDao {
         return isRowUpdated;
     }
 
-
     @Override
     public boolean deleteCustomer(BigDecimal cust_num) {
         Connection connection = null;
@@ -185,5 +185,46 @@ public class CustomersDaoImpl implements CustomersDao {
             }
         }
         return isRowDeleted;
+    }
+
+
+    private abstract class CRUDtemplate <T>{
+
+        public boolean templateOperation(T t) {
+            Connection connection = null;
+            PreparedStatement stmt = null;
+            Boolean isRowDeleted = false;
+            try {
+                connection = Pool.getConnection();
+                stmt = returnPrepareStatement(t, connection);
+                isRowDeleted = stmt.executeUpdate() > 0;
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    stmt.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            return isRowDeleted;
+        }
+        public abstract PreparedStatement returnPrepareStatement(T t, Connection conn) throws SQLException;
+    }
+
+
+    @Override
+    public boolean deleteAnotherCustomer (Customers customer)  throws SQLException{
+
+        return (new CRUDtemplate <Customers>() {
+            @Override
+            public PreparedStatement returnPrepareStatement(Customers customer, Connection conn) throws SQLException {
+                PreparedStatement stmt = conn.prepareStatement("DELETE FROM customers where cust_num = ?");
+                stmt.setBigDecimal(1, customer.getCustNum());
+                return stmt;
+            }
+        }).templateOperation(customer);
     }
 }
