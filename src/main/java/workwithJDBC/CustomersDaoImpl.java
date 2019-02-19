@@ -30,6 +30,7 @@ public class CustomersDaoImpl implements CustomersDao {
         return customers;
     }
 
+
     @Override
     public List<Customers> findCustomersByCreditLimit(BigDecimal creditLimit) throws SQLException {
         Connection connection = MakeConnection.getConnection();
@@ -160,7 +161,6 @@ public class CustomersDaoImpl implements CustomersDao {
         return isRowUpdated;
     }
 
-
     @Override
     public boolean deleteCustomer(BigDecimal cust_num) {
         Connection connection = null;
@@ -186,4 +186,7 @@ public class CustomersDaoImpl implements CustomersDao {
         }
         return isRowDeleted;
     }
+
+
+   
 }

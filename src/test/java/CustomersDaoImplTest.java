@@ -50,7 +50,7 @@ public class CustomersDaoImplTest {
         customer.setCustRep(BigDecimal.valueOf(120));
         customer.setCreditLimit(BigDecimal.valueOf(900));
         customer.setCompany("Apple");
-        boolean ins = customersDao.insertCustomer1( customer);
+        boolean ins = customersDao.insertWholeCustomer( customer);
         System.out.println(ins);
         assertTrue(ins);
     }
@@ -69,7 +69,7 @@ public class CustomersDaoImplTest {
         customer.setCustRep(BigDecimal.valueOf(102));
         customer.setCreditLimit(BigDecimal.valueOf(888));
         customer.setCompany("Wood");
-        boolean ins = customersDao.updateCustomer1(customer, BigDecimal.valueOf(4444));
+        boolean ins = customersDao.updateWholeCustomer(customer, BigDecimal.valueOf(4444));
         assertTrue(ins);
     }
 
@@ -77,5 +77,16 @@ public class CustomersDaoImplTest {
     public void test5DeleteCustomer() throws SQLException {
         System.out.println("testDeleteeCustomer ____________________");
         assertTrue(customersDao.deleteCustomer(new BigDecimal(3333)));
+    }
+
+    @Test
+    public void test6DeleteAnotherCustomer() throws SQLException {
+        System.out.println("testDeleteeCustomer ____________________");
+        Customers customer = new Customers();
+        customer.setCustNum(BigDecimal.valueOf(8888));
+        customer.setCustRep(BigDecimal.valueOf(102));
+        customer.setCreditLimit(BigDecimal.valueOf(888));
+        customer.setCompany("Wood");
+        assertTrue(customersDao.deleteAnotherCustomer(customer));
     }
 }
