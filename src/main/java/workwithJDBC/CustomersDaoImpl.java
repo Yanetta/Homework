@@ -187,6 +187,10 @@ public class CustomersDaoImpl implements CustomersDao {
         return isRowDeleted;
     }
 
+    @Override
+    public boolean deleteAnotherCustomer(Customers customer) throws SQLException {
+        return false;
+    }
 
-   
+
 }
