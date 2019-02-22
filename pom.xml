@@ -136,11 +136,11 @@
             <version>2.9.8</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>2.7.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.eclipse.persistence</groupId>-->
+            <!--<artifactId>eclipselink</artifactId>-->
+            <!--<version>2.7.4</version>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>org.eclipse.persistence</groupId>-->
             <!--<artifactId>org.eclipse.persistence.moxy</artifactId>-->
@@ -152,11 +152,44 @@
             <artifactId>c3p0</artifactId>
             <version>0.9.1.2</version>
         </dependency>
-
+        <!-- JPA -->
+        <!--<dependency>-->
+            <!--<groupId>org.eclipse.persistence</groupId>-->
+            <!--<artifactId>eclipselink</artifactId>-->
+            <!--<version>2.7.4</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.eclipse.persistence</groupId>-->
+                    <!--<artifactId>jakarta.persistence</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.eclipse.persistence</groupId>-->
+            <!--<artifactId>org.eclipse.persistence.moxy</artifactId>-->
+            <!--<version>2.7.4</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; Hibernate &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>5.4.1.Final</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.moxy</artifactId>
-            <version>2.7.4</version>
+            <artifactId>eclipselink</artifactId>
+            <version>2.7.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.persistence</groupId>
+                    <artifactId>javax.persistence</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.1.1</version>
         </dependency>
     </dependencies>
 

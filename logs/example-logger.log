@@ -18,3 +18,21 @@ INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) 
 DEBUG | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:16) -- input values a=3, b=0
 ERROR | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:20) -- Exception when div working / by zero
 INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) -- Method div return -666
+2019-02-21 22:13:39 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:15:08 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:15:10 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:16:06 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:16:08 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:18:30 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:18:32 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:19:25 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:19:26 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:24:31 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:24:33 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:27:42 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:27:43 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:30:20 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:30:22 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-21 22:32:36 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2019-02-21 22:32:38 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-22 20:04:46 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
