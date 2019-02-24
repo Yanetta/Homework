@@ -1,5 +1,4 @@
 package JPAwork;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,40 +6,35 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Locale;
 import java.util.Set;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class OrderDaoImpl implements OrderDao {
     private static EntityManagerFactory factory;
-
     static {
         Locale.setDefault(Locale.ENGLISH);
         factory = Persistence.createEntityManagerFactory("PERSISTENCE");
-
     }
-
     private static final Logger LOG = LogManager.getLogger(OrderDaoImpl.class);
     private EntityManager entityManager = factory.createEntityManager();
 
     @Override
-    public Set<Order> getAllOrders() throws SQLException {
+    public Set<Orders> getAllOrders() throws SQLException {
         return null;
     }
 
     @Override
-    public Set<Order> getAllOrdersInnerJoin() throws SQLException {
+    public Set<Orders> getAllOrdersInnerJoin() throws SQLException {
         return null;
     }
 
     @Override
-    public Order findOrderById(BigDecimal id) throws SQLException {
+    public Orders findOrderById(BigDecimal id) throws SQLException {
         return null;
     }
 
     @Override
-
-    public boolean insertOrder(Order transientInstance) {
+    public boolean insertOrder(Orders transientInstance) {
         LOG.debug("persisting Orders instance");
         try {
             entityManager.getTransaction().begin();
@@ -58,14 +52,13 @@ public class OrderDaoImpl implements OrderDao {
         }
     }
 
-
     @Override
-    public boolean updateOrder(BigDecimal orderNum) throws SQLException {
+    public boolean updateOrder(Orders order) throws SQLException {
         return false;
     }
 
     @Override
-    public boolean deleteOrder(BigDecimal orderNum) throws SQLException {
+    public boolean deleteOrder(BigDecimal id) throws SQLException {
         return false;
     }
 }

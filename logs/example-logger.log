@@ -36,3 +36,15 @@ INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) 
 2019-02-21 22:32:36 DEBUG hibernate.jpa.HibernatePersistenceProvider:38 -- Logging Provider: org.jboss.logging.Log4j2LoggerProvider
 2019-02-21 22:32:38 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
 2019-02-22 20:04:46 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-24 23:25:22 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-24 23:41:14 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-24 23:54:10 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-25 00:04:09 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-25 00:04:09 DEBUG JPAwork.OrderDaoImpl:49 -- persist successful
+2019-02-25 01:20:17 DEBUG JPAwork.OrderDaoImpl:64 -- updating Orders instance
+2019-02-25 01:20:17 DEBUG JPAwork.OrderDaoImpl:69 -- update successful
+2019-02-25 01:20:17 DEBUG JPAwork.OrderDaoImpl:44 -- persisting Orders instance
+2019-02-25 01:21:03 DEBUG JPAwork.OrderDaoImpl:64 -- updating Orders instance
+2019-02-25 01:21:03 DEBUG JPAwork.OrderDaoImpl:69 -- update successful
+2019-02-25 01:36:28 DEBUG JPAwork.OrderDaoImpl:82 -- removing Orders instance
+2019-02-25 01:36:28 DEBUG JPAwork.OrderDaoImpl:87 -- remove successful
