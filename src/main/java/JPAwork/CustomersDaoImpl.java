@@ -44,7 +44,7 @@ public class CustomersDaoImpl implements CustomersDao {
     @Override
     public boolean updateCustomer(Customers customer) throws SQLException {
 
-        LOG.debug("updating Orders instance");
+        LOG.debug("updating Cutomers instance");
         try {
             entityManager.getTransaction().begin();
             entityManager.merge(customer);

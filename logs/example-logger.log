@@ -60,3 +60,42 @@ INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) 
 2019-02-25 03:06:27 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
 2019-02-25 03:06:56 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
 2019-02-25 03:06:56 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
+2019-02-25 10:04:27 DEBUG JPAwork.CustomersDaoImpl:47 -- updating Orders instance
+2019-02-25 10:04:27 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
+2019-02-25 10:04:27 DEBUG JPAwork.CustomersDaoImpl:27 -- persisting Customers instance
+2019-02-25 10:04:27 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
+2019-02-25 10:04:28 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
+2019-02-25 10:05:24 DEBUG JPAwork.CustomersDaoImpl:27 -- persisting Customers instance
+2019-02-25 10:05:24 DEBUG JPAwork.CustomersDaoImpl:32 -- persist successful
+2019-02-25 10:05:33 DEBUG JPAwork.CustomersDaoImpl:47 -- updating Orders instance
+2019-02-25 10:05:33 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
+2019-02-25 10:05:55 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
+2019-02-25 10:05:55 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
+2019-02-25 10:06:24 DEBUG JPAwork.CustomersDaoImpl:47 -- updating Orders instance
+2019-02-25 10:06:24 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
+2019-02-25 10:06:24 DEBUG JPAwork.CustomersDaoImpl:27 -- persisting Customers instance
+2019-02-25 10:06:24 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
+2019-02-25 10:06:24 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
+2019-02-25 10:07:18 DEBUG JPAwork.OrderDaoImpl:38 -- persisting Orders instance
+2019-02-25 10:07:18 DEBUG JPAwork.OrderDaoImpl:43 -- persist successful
+2019-02-25 10:07:27 DEBUG JPAwork.OrderDaoImpl:57 -- updating Orders instance
+2019-02-25 10:07:27 DEBUG JPAwork.OrderDaoImpl:62 -- update successful
+2019-02-25 10:07:36 DEBUG JPAwork.OrderDaoImpl:76 -- removing Orders instance
+2019-02-25 10:07:36 DEBUG JPAwork.OrderDaoImpl:81 -- remove successful
+2019-02-25 10:07:50 DEBUG JPAwork.OrderDaoImpl:57 -- updating Orders instance
+2019-02-25 10:07:50 DEBUG JPAwork.OrderDaoImpl:62 -- update successful
+2019-02-25 10:07:50 DEBUG JPAwork.OrderDaoImpl:38 -- persisting Orders instance
+2019-02-25 10:07:50 DEBUG JPAwork.OrderDaoImpl:76 -- removing Orders instance
+2019-02-25 10:07:50 DEBUG JPAwork.OrderDaoImpl:81 -- remove successful
+2019-02-25 10:16:36 DEBUG JPAwork.OrderDaoImpl:38 -- persisting Orders instance
+2019-02-25 10:16:36 DEBUG JPAwork.OrderDaoImpl:43 -- persist successful
+2019-02-25 10:16:44 DEBUG JPAwork.OrderDaoImpl:57 -- updating Orders instance
+2019-02-25 10:16:44 DEBUG JPAwork.OrderDaoImpl:62 -- update successful
+2019-02-25 10:16:52 DEBUG JPAwork.OrderDaoImpl:76 -- removing Orders instance
+2019-02-25 10:16:53 DEBUG JPAwork.OrderDaoImpl:81 -- remove successful
+2019-02-25 10:17:11 DEBUG JPAwork.CustomersDaoImpl:27 -- persisting Customers instance
+2019-02-25 10:17:11 DEBUG JPAwork.CustomersDaoImpl:32 -- persist successful
+2019-02-25 10:17:20 DEBUG JPAwork.CustomersDaoImpl:47 -- updating Cutomers instance
+2019-02-25 10:17:20 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
+2019-02-25 10:17:29 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
+2019-02-25 10:17:29 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
