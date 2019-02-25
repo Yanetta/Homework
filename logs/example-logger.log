@@ -48,3 +48,15 @@ INFO  | 2019-01-22 22:02:17 | [main] calculator.Calculator	(Calculator.java:22) 
 2019-02-25 01:21:03 DEBUG JPAwork.OrderDaoImpl:69 -- update successful
 2019-02-25 01:36:28 DEBUG JPAwork.OrderDaoImpl:82 -- removing Orders instance
 2019-02-25 01:36:28 DEBUG JPAwork.OrderDaoImpl:87 -- remove successful
+2019-02-25 01:58:28 DEBUG JPAwork.OrderDaoImpl:38 -- persisting Orders instance
+2019-02-25 01:58:29 DEBUG JPAwork.OrderDaoImpl:43 -- persist successful
+2019-02-25 01:58:47 DEBUG JPAwork.OrderDaoImpl:57 -- updating Orders instance
+2019-02-25 01:58:48 DEBUG JPAwork.OrderDaoImpl:62 -- update successful
+2019-02-25 01:59:04 DEBUG JPAwork.OrderDaoImpl:76 -- removing Orders instance
+2019-02-25 01:59:04 DEBUG JPAwork.OrderDaoImpl:81 -- remove successful
+2019-02-25 03:05:37 DEBUG JPAwork.CustomersDaoImpl:27 -- persisting Customers instance
+2019-02-25 03:05:37 DEBUG JPAwork.CustomersDaoImpl:32 -- persist successful
+2019-02-25 03:06:26 DEBUG JPAwork.CustomersDaoImpl:47 -- updating Orders instance
+2019-02-25 03:06:27 DEBUG JPAwork.CustomersDaoImpl:52 -- update successful
+2019-02-25 03:06:56 DEBUG JPAwork.CustomersDaoImpl:68 -- removing Customers instance
+2019-02-25 03:06:56 DEBUG JPAwork.CustomersDaoImpl:73 -- remove successful
