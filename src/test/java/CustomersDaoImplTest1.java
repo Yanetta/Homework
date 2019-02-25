@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 
 import static org.junit.Assert.assertTrue;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CustomersDaoImplTest1 {
 
     private CustomersDaoImpl customersDao = new CustomersDaoImpl();
