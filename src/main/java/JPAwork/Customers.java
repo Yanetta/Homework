@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CUSTOMERS", schema = "MA_STUDENT")
-public class Customers {
+public class Customers implements java.io.Serializable {
     @Id
     @Column(name = "CUST_NUM")
     private BigDecimal cust_num;
