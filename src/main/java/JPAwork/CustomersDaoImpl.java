@@ -1,4 +1,7 @@
 package JPAwork;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -6,39 +9,25 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Locale;
 import java.util.Set;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-public class OrderDaoImpl implements OrderDao {
+public class CustomersDaoImpl implements CustomersDao {
     private static EntityManagerFactory factory;
+
     static {
         Locale.setDefault(Locale.ENGLISH);
         factory = Persistence.createEntityManagerFactory("PERSISTENCE");
     }
-    private static final Logger LOG = LogManager.getLogger(OrderDaoImpl.class);
+
+    private static final Logger LOG = LogManager.getLogger(JPAwork.OrderDaoImpl.class);
     private EntityManager entityManager = factory.createEntityManager();
 
     @Override
-    public Set<Orders> getAllOrders() throws SQLException {
-        return null;
-    }
+    public boolean insertCustomer(Customers customer){
 
-    @Override
-    public Set<Orders> getAllOrdersInnerJoin() throws SQLException {
-        return null;
-    }
-
-    @Override
-    public Orders findOrderById(BigDecimal id) throws SQLException {
-        return null;
-    }
-
-    @Override
-    public boolean insertOrder(Orders transientInstance) {
-        LOG.debug("persisting Orders instance");
+        LOG.debug("persisting Customers instance");
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(transientInstance);
+            entityManager.persist(customer);
             entityManager.getTransaction().commit();
             LOG.debug("persist successful");
             return true;
@@ -53,11 +42,12 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean updateOrder(Orders order) throws SQLException {
-        LOG.debug("updating Orders instance");
+    public boolean updateCustomer(Customers customer) {
+
+        LOG.debug("updating Cutomers instance");
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(order);
+            entityManager.merge(customer);
             entityManager.getTransaction().commit();
             LOG.debug("update successful");
             return true;
@@ -71,12 +61,14 @@ public class OrderDaoImpl implements OrderDao {
         }
     }
 
+
     @Override
-    public boolean deleteOrder(BigDecimal id) {
-        LOG.debug("removing Orders instance");
+    public boolean deleteCustomer(BigDecimal cust_num) {
+
+        LOG.debug("removing Customers instance");
         try {
             entityManager.getTransaction().begin();
-            entityManager.remove(entityManager.find(Orders.class, id));
+            entityManager.remove(entityManager.find(JPAwork.Customers.class, cust_num));
             entityManager.getTransaction().commit();
             LOG.debug("remove successful");
             return true;
