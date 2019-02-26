@@ -22,7 +22,7 @@ public class CustomersDaoImpl implements CustomersDao {
     private EntityManager entityManager = factory.createEntityManager();
 
     @Override
-    public boolean insertCustomer(Customers customer) throws SQLException {
+    public boolean insertCustomer(Customers customer){
 
         LOG.debug("persisting Customers instance");
         try {
@@ -42,7 +42,7 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
     @Override
-    public boolean updateCustomer(Customers customer) throws SQLException {
+    public boolean updateCustomer(Customers customer) {
 
         LOG.debug("updating Cutomers instance");
         try {
@@ -63,7 +63,7 @@ public class CustomersDaoImpl implements CustomersDao {
 
 
     @Override
-    public boolean deleteCustomer(BigDecimal cust_num) throws SQLException {
+    public boolean deleteCustomer(BigDecimal cust_num) {
 
         LOG.debug("removing Customers instance");
         try {
