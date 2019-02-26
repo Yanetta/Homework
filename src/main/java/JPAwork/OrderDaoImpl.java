@@ -72,7 +72,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean deleteOrder(BigDecimal id) throws SQLException {
+    public boolean deleteOrder(BigDecimal id) {
         LOG.debug("removing Orders instance");
         try {
             entityManager.getTransaction().begin();
