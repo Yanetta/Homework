@@ -19,8 +19,9 @@ public class Orders implements java.io.Serializable {
     private BigDecimal rep;
     @Column(name = "MFR")
     private String mfr;
-    @Column(name = "PRODUCT")
-    private String product;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "PRODUCT")
+    private Products product;
     @Column(name = "Qty")
     private BigDecimal qty;
     @Column(name = "AMOUNT")
@@ -29,8 +30,8 @@ public class Orders implements java.io.Serializable {
     public Orders() {
     }
 
-    public Orders(BigDecimal order_num,   Date order_date, BigDecimal cust, BigDecimal rep,
-                 String mfr, String product, BigDecimal qty, BigDecimal amount) {
+    public Orders(BigDecimal order_num, Date order_date, BigDecimal cust, BigDecimal rep,
+                  String mfr, Products product, BigDecimal qty, BigDecimal amount) {
         this.product = product;
         this.order_num = order_num;
         this.order_date = order_date;
@@ -41,11 +42,11 @@ public class Orders implements java.io.Serializable {
         this.cust = cust;
     }
 
-    public String getProduct() {
+    public Products getProduct() {
         return product;
     }
 
-    public void setProduct(String product) {
+    public void setProduct(Products product) {
         this.product = product;
     }
 

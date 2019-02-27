@@ -2,12 +2,15 @@ import JPAwork.Customers;
 import JPAwork.CustomersDaoImpl;
 import JPAwork.OrderDaoImpl;
 import JPAwork.Orders;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
 import static org.junit.Assert.assertTrue;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CustomersDaoImplTest1 {
 
@@ -27,9 +30,13 @@ public class CustomersDaoImplTest1 {
         assertTrue(customersDao.updateCustomer(customer));
     }
 
+    //    @Test
+//    public void test3deleteCustomers() throws SQLException {
+//        assertTrue(customersDao.deleteCustomer(BigDecimal.valueOf(2222)));
+//    }
     @Test
     public void test3deleteCustomers() throws SQLException {
-        assertTrue(customersDao.deleteCustomer(BigDecimal.valueOf(2222)));
+        assertTrue(customersDao.deleteCustomer());
     }
 }
 

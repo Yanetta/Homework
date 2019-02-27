@@ -62,23 +62,46 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
 
-    @Override
-    public boolean deleteCustomer(BigDecimal cust_num) {
+//    @Override
+//    public boolean deleteCustomer(BigDecimal cust_num) {
+//
+//        LOG.debug("removing Customers instance");
+//        try {
+//            entityManager.getTransaction().begin();
+//            entityManager.remove(entityManager.find(JPAwork.Customers.class, cust_num));
+//            entityManager.getTransaction().commit();
+//            LOG.debug("remove successful");
+//            return true;
+//        } catch (RuntimeException re) {
+//            if (entityManager != null) {
+//                System.out.println("Transaction is being rolled back.");
+//                entityManager.getTransaction().rollback();
+//            }
+//            LOG.error("remove failed", re);
+//            throw re;
+//        }
+//    }
+@Override
+public boolean deleteCustomer() {
 
-        LOG.debug("removing Customers instance");
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.remove(entityManager.find(JPAwork.Customers.class, cust_num));
-            entityManager.getTransaction().commit();
-            LOG.debug("remove successful");
-            return true;
-        } catch (RuntimeException re) {
-            if (entityManager != null) {
-                System.out.println("Transaction is being rolled back.");
-                entityManager.getTransaction().rollback();
-            }
-            LOG.error("remove failed", re);
-            throw re;
+    LOG.debug("removing Customers instance");
+    try {
+        entityManager.getTransaction().begin();
+        Customers customers = new Customers((BigDecimal.valueOf(2222)), BigDecimal.valueOf(103), BigDecimal.valueOf(3000), "Apple");
+        entityManager.merge(customers);
+        entityManager.getTransaction().commit();
+        entityManager.getTransaction().begin();
+        entityManager.remove(customers);
+        entityManager.getTransaction().commit();
+        LOG.debug("remove successful");
+        return true;
+    } catch (RuntimeException re) {
+        if (entityManager != null) {
+            System.out.println("Transaction is being rolled back.");
+            entityManager.getTransaction().rollback();
         }
+        LOG.error("remove failed", re);
+        throw re;
     }
+}
 }

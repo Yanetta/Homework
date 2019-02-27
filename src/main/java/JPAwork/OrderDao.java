@@ -5,15 +5,15 @@ import java.sql.SQLException;
 import java.util.Set;
 
 public interface OrderDao {
-    Set<Orders> getAllOrders() throws SQLException;
+    Set<Orders> getAllOrders();
 
-    Set<Orders> getAllOrdersInnerJoin() throws SQLException;
+    Set<Orders> getAllOrdersInnerJoin();
 
-    Orders findOrderById(BigDecimal id) throws SQLException;
+    Orders findOrderById(BigDecimal id);
 
-    boolean insertOrder(Orders order) throws SQLException;
+    boolean insertOrder(Orders order) ;
 
-    boolean updateOrder(Orders order) throws SQLException;
+    boolean updateOrder(Orders order) ;
 
-    boolean deleteOrder(BigDecimal id) throws SQLException;
+    boolean deleteOrder(BigDecimal id) ;
 }
