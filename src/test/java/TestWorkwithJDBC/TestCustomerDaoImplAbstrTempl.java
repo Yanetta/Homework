@@ -1,11 +1,10 @@
-package TestOrderDaoImpl;
+package TestWorkwithJDBC;
 
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import workwithJDBC.CustomerDaoImplAbstrTempl;
-import workwithJDBC.CustomerDaoSecondImpl;
 import workwithJDBC.Customers;
 
 import java.math.BigDecimal;

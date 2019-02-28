@@ -10,6 +10,8 @@ public interface CustomersDao {
 
     boolean updateCustomer(Customers customer);
 
-    //boolean deleteCustomer(BigDecimal cust_num);
-    boolean deleteCustomer();
+    boolean deleteCustomer(BigDecimal cust_num);
+
+    public Customers findCustomerById(BigDecimal id) ;
+
 }

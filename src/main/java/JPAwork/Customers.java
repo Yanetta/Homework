@@ -1,10 +1,9 @@
 package JPAwork;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "CUSTOMERS", schema = "MA_STUDENT")
@@ -12,19 +11,26 @@ public class Customers implements java.io.Serializable {
     @Id
     @Column(name = "CUST_NUM")
     private BigDecimal cust_num;
-    @Column(name = "CUST_REP")
-    private BigDecimal cust_rep;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CUST_REP")
+    private Salesreps salesreps;
+
     @Column(name = "CREDIT_LIMIT")
     private BigDecimal credit_limit;
+
     @Column(name = "COMPANY")
     private String company;
+
+    private Set<Orders> ordersSet = new HashSet<Orders>(0);
+
 
     public Customers() {
     }
 
-    public Customers(BigDecimal cust_num, BigDecimal cust_rep, BigDecimal credit_limit, String company) {
+    public Customers(BigDecimal cust_num, Salesreps cust_rep, BigDecimal credit_limit, String company) {
         this.cust_num = cust_num;
-        this.cust_rep = cust_rep;
+        this.salesreps = cust_rep;
         this.credit_limit = credit_limit;
         this.company = company;
     }
@@ -37,12 +43,12 @@ public class Customers implements java.io.Serializable {
         this.cust_num = cust_num;
     }
 
-    public BigDecimal getCust_rep() {
-        return cust_rep;
+    public Salesreps getSalesreps() {
+        return salesreps;
     }
 
-    public void setCust_rep(BigDecimal cust_rep) {
-        this.cust_rep = cust_rep;
+    public void setSalesreps(Salesreps salesreps) {
+        this.salesreps = salesreps;
     }
 
     public BigDecimal getCredit_limit() {
@@ -61,13 +67,23 @@ public class Customers implements java.io.Serializable {
         this.company = company;
     }
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cust")
+    public Set<Orders> getOrdersSet() {
+        return ordersSet;
+    }
+
+    public void setOrdersSet(Set<Orders> orders) {
+        this.ordersSet = orders;
+    }
+
     @Override
     public String toString() {
         return "Customers{" +
                 "cust_num=" + cust_num +
-                ", cust_rep=" + cust_rep +
+               ", cust_rep=" + salesreps +
                 ", credit_limit=" + credit_limit +
                 ", company='" + company + '\'' +
+                ", orders=" + ordersSet +
                 '}';
     }
 }

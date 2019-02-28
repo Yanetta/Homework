@@ -13,27 +13,32 @@ public class Products implements Serializable {
     @Id
     @Column(name = "PRODUCT_ID")
     private String product_id;
+
     @Column(name = "MFR_ID")
     private String mfr_id;
+
     @Column(name = "DESCRIPTION")
     private String description;
+
     @Column(name = "PRICE")
     private BigDecimal price;
+
     @Column(name = "QTY_ON_HAND")
     private BigDecimal qty_on_hand;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Products")
-    private Set<Orders> orders = new HashSet<Orders>();
 
-    public Products(){};
+    private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
-//    public Products(String mfr_ID, String product_ID, String description, BigDecimal price, BigDecimal qtyOnHand) {
-//        this.mfr_ID = mfr_ID;
-//        this.product_ID = product_ID;
-//        this.description = description;
-//        this.price = price;
-//        this.qtyOnHand = qtyOnHand;
-//    }
+    public Products() {
+    }
 
+    public Products(String product_id, String mfr_id, String description, BigDecimal price, BigDecimal qty_on_hand, Set<Orders> orders) {
+        this.product_id = product_id;
+        this.mfr_id = mfr_id;
+        this.description = description;
+        this.price = price;
+        this.qty_on_hand = qty_on_hand;
+        this.ordersSet = orders;
+    }
 
     public String getMfr_id() {
         return mfr_id;
@@ -75,23 +80,24 @@ public class Products implements Serializable {
         this.qty_on_hand = qty_on_hand;
     }
 
-    public Set<Orders> getOrders() {
-        return orders;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "products")
+    public Set<Orders> getOrdersSet() {
+        return this.ordersSet;
     }
 
-    public void setOrders(Set<Orders> orders) {
-        this.orders = orders;
+    public void setOrdersSet(Set<Orders> orders) {
+        this.ordersSet = orders;
     }
 
     @Override
     public String toString() {
         return "Products{" +
-                "mfr_id='" + mfr_id + '\'' +
-                ", product_id='" + product_id + '\'' +
+                "product_id='" + product_id + '\'' +
+                ", mfr_id='" + mfr_id + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", qty_on_hand=" + qty_on_hand +
-                ", orders=" + orders +
+                ", orders=" + ordersSet +
                 '}';
     }
 }

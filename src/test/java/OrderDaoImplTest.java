@@ -15,11 +15,11 @@ import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OrderDaoImplTest {
-    private static final BigDecimal ALREADY_EXIST_ORDER = BigDecimal.valueOf(113042);
+    private static final BigDecimal ALREADY_EXIST_ORDER = BigDecimal.valueOf(112997);
 
     private OrderDaoImpl orderDao = new OrderDaoImpl();
-    Orders order = new Orders(BigDecimal.valueOf(123456), new Date(),
-            BigDecimal.valueOf(2103), BigDecimal.valueOf(103), "REI", new Products(),BigDecimal.valueOf(222), BigDecimal.valueOf(2000));
+//    Orders order = new Orders(BigDecimal.valueOf(123456), new Date(),
+//            BigDecimal.valueOf(2103), BigDecimal.valueOf(103), "REI", new Products(),BigDecimal.valueOf(222), BigDecimal.valueOf(2000));
 
 //    @Test
 //    public void test1InsertOrder() throws SQLException{
@@ -44,8 +44,10 @@ public class OrderDaoImplTest {
     public void testFindOrderById() throws SQLException {
         System.out.println("findOrderById ____________________");
         Orders order = orderDao.findOrderById(ALREADY_EXIST_ORDER);
-        System.out.println(order);
-        System.out.println(order.getProduct());
+        System.out.println(order.getProducts());
+        System.out.println(order.getCustomers());
+        System.out.println(order.getSalesreps());
+        System.out.println(order.getSalesreps().getOffices());
         assertNotNull(order);
 
     }

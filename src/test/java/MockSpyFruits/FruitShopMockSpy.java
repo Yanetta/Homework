@@ -1,3 +1,5 @@
+package MockSpyFruits;
+
 import fruitShop.Fruit;
 import fruitShop.FruitShop;
 import fruitShop.FruitType;

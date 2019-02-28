@@ -1,4 +1,4 @@
-package TestOrderDaoImpl;
+package TestWorkwithJDBC;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;

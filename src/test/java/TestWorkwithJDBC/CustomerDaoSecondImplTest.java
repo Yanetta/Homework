@@ -1,4 +1,4 @@
-package TestOrderDaoImpl;
+package TestWorkwithJDBC;
 
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -8,7 +8,6 @@ import workwithJDBC.CustomerDaoSecondImpl;
 import workwithJDBC.Customers;
 
 import java.math.BigDecimal;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import static org.junit.Assert.assertTrue;

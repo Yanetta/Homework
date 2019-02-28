@@ -62,46 +62,42 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
 
-//    @Override
-//    public boolean deleteCustomer(BigDecimal cust_num) {
-//
-//        LOG.debug("removing Customers instance");
-//        try {
-//            entityManager.getTransaction().begin();
-//            entityManager.remove(entityManager.find(JPAwork.Customers.class, cust_num));
-//            entityManager.getTransaction().commit();
-//            LOG.debug("remove successful");
-//            return true;
-//        } catch (RuntimeException re) {
-//            if (entityManager != null) {
-//                System.out.println("Transaction is being rolled back.");
-//                entityManager.getTransaction().rollback();
-//            }
-//            LOG.error("remove failed", re);
-//            throw re;
-//        }
-//    }
-@Override
-public boolean deleteCustomer() {
+    @Override
+    public boolean deleteCustomer(BigDecimal cust_num) {
 
-    LOG.debug("removing Customers instance");
-    try {
-        entityManager.getTransaction().begin();
-        Customers customers = new Customers((BigDecimal.valueOf(2222)), BigDecimal.valueOf(103), BigDecimal.valueOf(3000), "Apple");
-        entityManager.merge(customers);
-        entityManager.getTransaction().commit();
-        entityManager.getTransaction().begin();
-        entityManager.remove(customers);
-        entityManager.getTransaction().commit();
-        LOG.debug("remove successful");
-        return true;
-    } catch (RuntimeException re) {
-        if (entityManager != null) {
-            System.out.println("Transaction is being rolled back.");
-            entityManager.getTransaction().rollback();
+        LOG.debug("removing Customers instance");
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.remove(entityManager.find(JPAwork.Customers.class, cust_num));
+            entityManager.getTransaction().commit();
+            LOG.debug("remove successful");
+            return true;
+        } catch (RuntimeException re) {
+            if (entityManager != null) {
+                System.out.println("Transaction is being rolled back.");
+                entityManager.getTransaction().rollback();
+            }
+            LOG.error("remove failed", re);
+            throw re;
         }
-        LOG.error("remove failed", re);
-        throw re;
     }
-}
+    @Override
+    public Customers findCustomerById(BigDecimal id) {
+        LOG.debug("find Customer instance");
+        try {
+            entityManager.getTransaction().begin();
+            Customers instance = entityManager.find(Customers.class, id);
+            entityManager.getTransaction().commit();
+            LOG.debug("find successful");
+            return instance;
+        } catch (RuntimeException re) {
+            if (entityManager != null) {
+                System.out.println("Transaction is being rolled back.");
+                entityManager.getTransaction().rollback();
+            }
+            LOG.error("find failed", re);
+            throw re;
+        }
+    }
+
 }
