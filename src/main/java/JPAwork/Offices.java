@@ -102,7 +102,7 @@ public class Offices implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Offices{" +
+        return "\n"+"Offices{" +
                 "office=" + office +
                 ", region='" + region + '\'' +
                 ", city='" + city + '\'' +

@@ -91,13 +91,13 @@ public class Products implements Serializable {
 
     @Override
     public String toString() {
-        return "Products{" +
-                "product_id='" + product_id + '\'' +
-                ", mfr_id='" + mfr_id + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", qty_on_hand=" + qty_on_hand +
-                ", orders=" + ordersSet +
+        return "\n"+"Products{" +"\n"+
+                "product_id='" + product_id +
+                ", "+"\n"+"mfr_id='" + mfr_id +
+                ", "+"\n"+"description='" + description +
+                ", "+"\n"+"price=" + price +
+                ","+"\n"+"qty_on_hand=" + qty_on_hand +
+                ", "+"\n"+"orders=" + ordersSet +
                 '}';
     }
 }

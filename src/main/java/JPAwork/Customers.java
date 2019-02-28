@@ -78,12 +78,12 @@ public class Customers implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Customers{" +
+        return "\n"+ "Customers{" +
                 "cust_num=" + cust_num +
                ", cust_rep=" + salesreps +
                 ", credit_limit=" + credit_limit +
                 ", company='" + company + '\'' +
                 ", orders=" + ordersSet +
-                '}';
+                '}' ;
     }
 }

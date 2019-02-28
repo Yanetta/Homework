@@ -180,20 +180,20 @@ public class Salesreps implements Serializable {
 
     @Override
     public String toString() {
-        return "Salesreps{" +
+        return "\n"+"Salesreps{" +"\n"+
                 "empl_num=" + empl_num +
-                ", name='" + name + '\'' +
-                ", title='" + title + '\'' +
-                ", offices=" + offices +
-                ", hire_date=" + hire_date +
-                ", age=" + age +
-                ", sales=" + sales +
-                ", quota=" + quota +
+                ","+"\n"+"name='" + name + '\'' +
+                ","+"\n"+"title='" + title + '\'' +
+                ","+"\n"+"offices=" + offices +
+                ", "+"\n"+"hire_date=" + hire_date +
+                ","+"\n"+"age=" + age +
+                ", "+"\n"+"sales=" + sales +
+                ", "+"\n"+"quota=" + quota +
                 //", salesreps=" + salesreps +
-                ", officesSet=" + officesSet +
-                ", customersSet=" + customersSet +
-                ", ordersSet=" + ordersSet +
-                ", salesrepsSet=" + salesrepsSet +
+                ","+"\n"+"officesSet=" + officesSet +
+                ","+"\n"+"customersSet=" + customersSet +
+                ","+"\n"+"ordersSet=" + ordersSet +
+                ","+"\n"+"salesrepsSet=" + salesrepsSet +
                 '}';
     }
 }
