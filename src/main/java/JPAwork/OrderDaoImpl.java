@@ -1,10 +1,11 @@
 package JPAwork;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.LockModeType;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 import org.apache.logging.log4j.LogManager;
@@ -19,13 +20,32 @@ public class OrderDaoImpl implements OrderDao {
     private static final Logger LOG = LogManager.getLogger(OrderDaoImpl.class);
     private EntityManager entityManager = factory.createEntityManager();
 
+
+
     @Override
-    public Set<Orders> getAllOrders(){
-        return null;
+    public Set<Orders> getAllOrders() {
+        LOG.debug("getting all Order instanses");
+        try {
+
+            CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+            CriteriaQuery<Orders> cq = cb.createQuery(Orders.class);
+            Root<Orders> rootEntry = cq.from(Orders.class);
+
+            CriteriaQuery<Orders> all = cq.select(rootEntry);
+            TypedQuery<Orders> allQuery = entityManager.createQuery(all);
+            allQuery.setFirstResult(2);
+            allQuery.setMaxResults(4);
+
+            return new HashSet<>(allQuery.getResultList());
+        } catch (RuntimeException e) {
+            LOG.error("get all orders fail", e);
+            throw e;
+        }
+
     }
 
     @Override
-    public Set<Orders> getAllOrdersInnerJoin()  {
+    public Set<Orders> getAllOrdersInnerJoin() {
         return null;
     }
 

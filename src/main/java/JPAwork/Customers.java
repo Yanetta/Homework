@@ -22,6 +22,7 @@ public class Customers implements java.io.Serializable {
     @Column(name = "COMPANY")
     private String company;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customers")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
 
@@ -67,7 +68,6 @@ public class Customers implements java.io.Serializable {
         this.company = company;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cust")
     public Set<Orders> getOrdersSet() {
         return ordersSet;
     }
@@ -80,10 +80,10 @@ public class Customers implements java.io.Serializable {
     public String toString() {
         return "\n"+ "Customers{" +
                 "cust_num=" + cust_num +
-               ", cust_rep=" + salesreps +
+               //", cust_rep=" + salesreps +
                 ", credit_limit=" + credit_limit +
                 ", company='" + company + '\'' +
-                ", orders=" + ordersSet +
+//               ", orders=" + ordersSet +
                 '}' ;
     }
 }

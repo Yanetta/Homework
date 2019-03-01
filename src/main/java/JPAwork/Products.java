@@ -26,6 +26,7 @@ public class Products implements Serializable {
     @Column(name = "QTY_ON_HAND")
     private BigDecimal qty_on_hand;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "products")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
     public Products() {
@@ -80,7 +81,6 @@ public class Products implements Serializable {
         this.qty_on_hand = qty_on_hand;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "products")
     public Set<Orders> getOrdersSet() {
         return this.ordersSet;
     }
@@ -97,7 +97,7 @@ public class Products implements Serializable {
                 ", "+"\n"+"description='" + description +
                 ", "+"\n"+"price=" + price +
                 ","+"\n"+"qty_on_hand=" + qty_on_hand +
-                ", "+"\n"+"orders=" + ordersSet +
+                //", "+"\n"+"orders=" + ordersSet +
                 '}';
     }
 }

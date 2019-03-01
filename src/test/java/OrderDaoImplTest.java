@@ -2,6 +2,7 @@ import JPAwork.OrderDaoImpl;
 import JPAwork.Orders;
 
 import JPAwork.Products;
+import JPAwork.Salesreps;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -9,6 +10,7 @@ import org.junit.runners.MethodSorters;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.Set;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -21,7 +23,7 @@ public class OrderDaoImplTest {
 //    Orders order = new Orders(BigDecimal.valueOf(123456), new Date(),
 //            BigDecimal.valueOf(2103), BigDecimal.valueOf(103), "REI", new Products(),BigDecimal.valueOf(222), BigDecimal.valueOf(2000));
 
-//    @Test
+    //    @Test
 //    public void test1InsertOrder() throws SQLException{
 //    assertTrue(orderDao.insertOrder(order));
 //    }
@@ -35,7 +37,8 @@ public class OrderDaoImplTest {
     public void test3deleteOrder() throws SQLException {
         assertTrue(orderDao.deleteOrder(BigDecimal.valueOf(123456)));
     }
-//   @Test
+
+    //   @Test
 //   public void test4findOrderById() throws SQLException {
 //     assertTrue(orderDao.findOrderById(BigDecimal.valueOf(2222));
 //
@@ -44,11 +47,18 @@ public class OrderDaoImplTest {
     public void testFindOrderById() throws SQLException {
         System.out.println("findOrderById ____________________");
         Orders order = orderDao.findOrderById(ALREADY_EXIST_ORDER);
-        System.out.println(order.getProducts());
-        System.out.println(order.getCustomers());
-        System.out.println(order.getSalesreps());
-        System.out.println(order.getSalesreps().getOffices());
-        assertNotNull(order);
+        System.out.println(order.getCustomers().getOrdersSet());
+        // System.out.println(order.getCustomers());
+       // System.out.println(order.getSalesreps());
+//        System.out.println(order.getSalesreps().getOffices());
+//        assertNotNull(order);
 
+    }
+
+    @Test
+    public void getAllOrdersTest() {
+        Set<Orders> orders = orderDao.getAllOrders();
+        System.out.println(orders);
+        assertNotNull(orders);
     }
 }
