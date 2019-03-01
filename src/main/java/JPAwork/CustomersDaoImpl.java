@@ -81,4 +81,23 @@ public class CustomersDaoImpl implements CustomersDao {
             throw re;
         }
     }
+    @Override
+    public Customers findCustomerById(BigDecimal id) {
+        LOG.debug("find Customer instance");
+        try {
+            entityManager.getTransaction().begin();
+            Customers instance = entityManager.find(Customers.class, id);
+            entityManager.getTransaction().commit();
+            LOG.debug("find successful");
+            return instance;
+        } catch (RuntimeException re) {
+            if (entityManager != null) {
+                System.out.println("Transaction is being rolled back.");
+                entityManager.getTransaction().rollback();
+            }
+            LOG.error("find failed", re);
+            throw re;
+        }
+    }
+
 }

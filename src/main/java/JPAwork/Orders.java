@@ -10,43 +10,44 @@ public class Orders implements java.io.Serializable {
     @Id
     @Column(name = "ORDER_NUM")
     private BigDecimal order_num;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "ORDER_DATE")
     private Date order_date;
-    @Column(name = "CUST")
-    private BigDecimal cust;
-    @Column(name = "REP")
-    private BigDecimal rep;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CUST")
+    private Customers customers;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "REP")
+    private Salesreps salesreps;
+
     @Column(name = "MFR")
     private String mfr;
-    @Column(name = "PRODUCT")
-    private String product;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "PRODUCT")
+    private Products products;
+
     @Column(name = "Qty")
     private BigDecimal qty;
+
     @Column(name = "AMOUNT")
     private BigDecimal amount;
 
     public Orders() {
     }
 
-    public Orders(BigDecimal order_num,   Date order_date, BigDecimal cust, BigDecimal rep,
-                 String mfr, String product, BigDecimal qty, BigDecimal amount) {
-        this.product = product;
+    public Orders(BigDecimal order_num, Date order_date, Customers customers, Salesreps salesreps, String mfr, Products products, BigDecimal qty, BigDecimal amount) {
         this.order_num = order_num;
         this.order_date = order_date;
-        this.amount = amount;
-        this.qty = qty;
+        this.customers = customers;
+        this.salesreps = salesreps;
         this.mfr = mfr;
-        this.rep = rep;
-        this.cust = cust;
-    }
-
-    public String getProduct() {
-        return product;
-    }
-
-    public void setProduct(String product) {
-        this.product = product;
+        this.products = products;
+        this.qty = qty;
+        this.amount = amount;
     }
 
     public BigDecimal getOrderNum() {
@@ -105,33 +106,42 @@ public class Orders implements java.io.Serializable {
         this.order_date = order_date;
     }
 
-    public BigDecimal getRep() {
-        return rep;
+    public Salesreps getSalesreps() {
+        return salesreps;
     }
 
-    public void setRep(BigDecimal rep) {
-        this.rep = rep;
+    public void setSalesreps(Salesreps rep) {
+        this.salesreps = rep;
     }
 
-    public BigDecimal getCust() {
-        return cust;
+
+    public Customers getCustomers() {
+        return customers;
     }
 
-    public void setCust(BigDecimal cust) {
-        this.cust = cust;
+    public void setCustomers(Customers customers) {
+        this.customers = customers;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products products) {
+        this.products = products;
     }
 
     @Override
     public String toString() {
-        return "Order{" +
-                "product='" + product + '\'' +
-                ", order_num=" + order_num +
+        return "Orders{" +
+                "order_num=" + order_num +
                 ", order_date=" + order_date +
-                ", amount=" + amount +
-                ", qty=" + qty +
+                ", customers=" + customers +
+                ", salesreps=" + salesreps +
                 ", mfr='" + mfr + '\'' +
-                ", rep=" + rep +
-                ", cust=" + cust +
+                ", products=" + products +
+                ", qty=" + qty +
+                ", amount=" + amount +
                 '}';
     }
 }

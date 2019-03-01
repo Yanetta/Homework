@@ -1,6 +1,7 @@
 package JPAwork;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.LockModeType;
 import javax.persistence.Persistence;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -19,18 +20,32 @@ public class OrderDaoImpl implements OrderDao {
     private EntityManager entityManager = factory.createEntityManager();
 
     @Override
-    public Set<Orders> getAllOrders() throws SQLException {
+    public Set<Orders> getAllOrders(){
         return null;
     }
 
     @Override
-    public Set<Orders> getAllOrdersInnerJoin() throws SQLException {
+    public Set<Orders> getAllOrdersInnerJoin()  {
         return null;
     }
 
     @Override
-    public Orders findOrderById(BigDecimal id) throws SQLException {
-        return null;
+    public Orders findOrderById(BigDecimal id) {
+        LOG.debug("find Orders instance");
+        try {
+            entityManager.getTransaction().begin();
+            Orders instance = entityManager.find(Orders.class, id);
+            entityManager.getTransaction().commit();
+            LOG.debug("find successful");
+            return instance;
+        } catch (RuntimeException re) {
+            if (entityManager != null) {
+                System.out.println("Transaction is being rolled back.");
+                entityManager.getTransaction().rollback();
+            }
+            LOG.error("find failed", re);
+            throw re;
+        }
     }
 
     @Override
@@ -38,6 +53,7 @@ public class OrderDaoImpl implements OrderDao {
         LOG.debug("persisting Orders instance");
         try {
             entityManager.getTransaction().begin();
+            entityManager.lock(transientInstance, LockModeType.OPTIMISTIC );
             entityManager.persist(transientInstance);
             entityManager.getTransaction().commit();
             LOG.debug("persist successful");
@@ -53,7 +69,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean updateOrder(Orders order) throws SQLException {
+    public boolean updateOrder(Orders order) {
         LOG.debug("updating Orders instance");
         try {
             entityManager.getTransaction().begin();
