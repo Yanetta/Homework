@@ -28,6 +28,7 @@ public class Offices implements java.io.Serializable {
     @Column(name = "SALES")
     private BigDecimal sales;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "offices")
     private Set<Salesreps> salesrepsSet = new HashSet<Salesreps>(0);
 
 
@@ -91,7 +92,6 @@ public class Offices implements java.io.Serializable {
         this.sales = sales;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "offices")
     public Set<Salesreps> getSalesrepsSet() {
         return salesrepsSet;
     }
@@ -102,11 +102,11 @@ public class Offices implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Offices{" +
+        return "\n"+"Offices{" +
                 "office=" + office +
                 ", region='" + region + '\'' +
                 ", city='" + city + '\'' +
-                //", mgr=" + salesreps +
+                ", mgr=" + salesreps +
                 ", target=" + target +
                 ", sales=" + sales +
                 '}';

@@ -36,9 +36,8 @@ public class CustomersDaoImplTest1 {
     @Test
     public void testFindOrderById() throws SQLException {
         System.out.println("findCustomerById ____________________");
-        Customers customers = customersDao.findCustomerById(BigDecimal.valueOf(2105));
-        System.out.println(customers);
-        assertNotNull(customers);
+        System.out.println(customersDao.findCustomerById(BigDecimal.valueOf(2105)).getOrdersSet());
+       // assertNotNull(customers);
     }
 }
 

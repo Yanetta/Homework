@@ -42,12 +42,16 @@ public class Salesreps implements Serializable {
     @JoinColumn(name = "MANAGER")
     private Salesreps salesreps;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     private Set<Offices> officesSet = new HashSet<Offices>(0);
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     private Set<Customers> customersSet = new HashSet<Customers>(0);
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     private Set<Orders> ordersSet = new HashSet<Orders>(0);
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     private Set<Salesreps> salesrepsSet = new HashSet<Salesreps>(0);
 
 
@@ -102,7 +106,6 @@ public class Salesreps implements Serializable {
         this.offices = rep_office;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     public Set<Customers> getCustomersSet() {
         return customersSet;
     }
@@ -111,7 +114,6 @@ public class Salesreps implements Serializable {
         this.customersSet = customers;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     public Set<Orders> getOrdersSet() {
         return ordersSet;
     }
@@ -160,7 +162,6 @@ public class Salesreps implements Serializable {
         this.salesreps = manager;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     public Set<Offices> getOfficesSet() {
         return officesSet;
     }
@@ -169,7 +170,6 @@ public class Salesreps implements Serializable {
         this.officesSet = offices;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "salesreps")
     public Set<Salesreps> getSalesrepsSet() {
         return salesrepsSet;
     }
@@ -180,20 +180,20 @@ public class Salesreps implements Serializable {
 
     @Override
     public String toString() {
-        return "Salesreps{" +
+        return "\n" + "Salesreps{" + "\n" +
                 "empl_num=" + empl_num +
-                ", name='" + name + '\'' +
-                ", title='" + title + '\'' +
-                ", offices=" + offices +
-                ", hire_date=" + hire_date +
-                ", age=" + age +
-                ", sales=" + sales +
-                ", quota=" + quota +
+                "," + "\n" + "name='" + name + '\'' +
+                "," + "\n" + "title='" + title + '\'' +
+                //"," + "\n" + "offices=" + offices +
+                ", " + "\n" + "hire_date=" + hire_date +
+                "," + "\n" + "age=" + age +
+                ", " + "\n" + "sales=" + sales +
+                ", " + "\n" + "quota=" + quota +
                 //", salesreps=" + salesreps +
-                ", officesSet=" + officesSet +
-                ", customersSet=" + customersSet +
-                ", ordersSet=" + ordersSet +
-                ", salesrepsSet=" + salesrepsSet +
+//                ","+"\n"+"officesSet=" + officesSet +
+//                ","+"\n"+"customersSet=" + customersSet +
+//                ","+"\n"+"ordersSet=" + ordersSet +
+//                ","+"\n"+"salesrepsSet=" + salesrepsSet +
                 '}';
     }
 }
