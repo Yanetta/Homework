@@ -17,11 +17,12 @@ import static org.junit.Assert.assertTrue;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OrdersDaoImplTestHib {
     private static final BigDecimal ALREADY_EXIST_ORDER = BigDecimal.valueOf(113042);
+    private static final BigDecimal NEW_ORDER = BigDecimal.valueOf(222223);
 
     private HibOrderDaoImpl orderDa = new HibOrderDaoImpl();
 
-    private Orders order = new Orders(BigDecimal.valueOf(222223), null, null, null, "REI", null, BigDecimal.valueOf(500), BigDecimal.valueOf(600));
-    private Orders orderUpd = new Orders(BigDecimal.valueOf(222223), null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
+    private Orders order = new Orders(NEW_ORDER, null, null, null, "REI", null, BigDecimal.valueOf(500), BigDecimal.valueOf(600));
+    private Orders orderUpd = new Orders(NEW_ORDER, null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
 
     @Test
     public void test3InsertOrder() throws SQLException {
