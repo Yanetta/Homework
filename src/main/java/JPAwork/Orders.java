@@ -50,46 +50,6 @@ public class Orders implements java.io.Serializable {
         this.amount = amount;
     }
 
-    public BigDecimal getOrderNum() {
-        return order_num;
-    }
-
-    public void setOrderNum(BigDecimal order_num) {
-        this.order_num = order_num;
-    }
-
-    public Date getOrderDate() {
-        return order_date;
-    }
-
-    public void setOrderDate(Date order_date) {
-        this.order_date = order_date;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public BigDecimal getQty() {
-        return qty;
-    }
-
-    public void setQty(BigDecimal qty) {
-        this.qty = qty;
-    }
-
-    public String getMfr() {
-        return mfr;
-    }
-
-    public void setMfr(String mfr) {
-        this.mfr = mfr;
-    }
-
     public BigDecimal getOrder_num() {
         return order_num;
     }
@@ -106,15 +66,6 @@ public class Orders implements java.io.Serializable {
         this.order_date = order_date;
     }
 
-    public Salesreps getSalesreps() {
-        return salesreps;
-    }
-
-    public void setSalesreps(Salesreps rep) {
-        this.salesreps = rep;
-    }
-
-
     public Customers getCustomers() {
         return customers;
     }
@@ -123,12 +74,44 @@ public class Orders implements java.io.Serializable {
         this.customers = customers;
     }
 
+    public Salesreps getSalesreps() {
+        return salesreps;
+    }
+
+    public void setSalesreps(Salesreps salesreps) {
+        this.salesreps = salesreps;
+    }
+
+    public String getMfr() {
+        return mfr;
+    }
+
+    public void setMfr(String mfr) {
+        this.mfr = mfr;
+    }
+
     public Products getProducts() {
         return products;
     }
 
     public void setProducts(Products products) {
         this.products = products;
+    }
+
+    public BigDecimal getQty() {
+        return qty;
+    }
+
+    public void setQty(BigDecimal qty) {
+        this.qty = qty;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     @Override

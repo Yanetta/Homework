@@ -29,11 +29,12 @@ public class Customers implements java.io.Serializable {
     public Customers() {
     }
 
-    public Customers(BigDecimal cust_num, Salesreps cust_rep, BigDecimal credit_limit, String company) {
+    public Customers(BigDecimal cust_num, Salesreps salesreps, BigDecimal credit_limit, String company) {
         this.cust_num = cust_num;
-        this.salesreps = cust_rep;
+        this.salesreps = salesreps;
         this.credit_limit = credit_limit;
         this.company = company;
+
     }
 
     public BigDecimal getCust_num() {
@@ -72,8 +73,8 @@ public class Customers implements java.io.Serializable {
         return ordersSet;
     }
 
-    public void setOrdersSet(Set<Orders> orders) {
-        this.ordersSet = orders;
+    public void setOrdersSet(Set<Orders> ordersSet) {
+        this.ordersSet = ordersSet;
     }
 
     @Override
