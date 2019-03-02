@@ -35,9 +35,9 @@ public class OrdersDaoImplTestHib {
 
     @Test
     public void test1FindOrderById() throws SQLException {
-        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices());
+       System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getCustomers());
-        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
+       System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts().getOrdersSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices().getSalesrepsSet());
@@ -46,6 +46,7 @@ public class OrdersDaoImplTestHib {
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOfficesSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOrdersSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getSalesrepsSet());
+        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
     }
 
     @Test

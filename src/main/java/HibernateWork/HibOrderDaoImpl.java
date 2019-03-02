@@ -82,10 +82,10 @@ public class HibOrderDaoImpl implements OrderDao {
                 LOG.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
-        } finally {
-            if (sessionObj != null) {
-                sessionObj.close();
-            }
+//        } finally {
+//            if (sessionObj != null) {
+//                sessionObj.close();
+//            }
         }
         return orders;
     }
