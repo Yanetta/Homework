@@ -21,7 +21,7 @@ public class OrdersDaoImplTestHib {
     private HibOrderDaoImpl orderDa = new HibOrderDaoImpl();
 
     private Orders order = new Orders(BigDecimal.valueOf(222223), null, null, null, "REI", null, BigDecimal.valueOf(500), BigDecimal.valueOf(600));
-    private Orders orderUpd = new Orders(BigDecimal.valueOf(222223), null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
+    private Orders orderUpd = new Orders(BigDecimal.valueOf(113042), null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
 
     @Test
     public void test3InsertOrder() throws SQLException {

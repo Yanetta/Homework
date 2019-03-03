@@ -132,6 +132,8 @@ public class HibOrderDaoImpl implements OrderDao {
             sessionObj.beginTransaction();
             Orders orders = (Orders) sessionObj.load(Orders.class, order.getOrder_num());
             orders.setQty(order.getQty());
+            orders.setAmount(order.getAmount());
+            orders.setMfr(order.getMfr());
             sessionObj.getTransaction().commit();
            isSuccessful = true;
         } catch (HibernateException hiException) {
