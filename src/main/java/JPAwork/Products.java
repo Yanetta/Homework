@@ -32,13 +32,12 @@ public class Products implements Serializable {
     public Products() {
     }
 
-    public Products(String product_id, String mfr_id, String description, BigDecimal price, BigDecimal qty_on_hand, Set<Orders> orders) {
+    public Products(String product_id, String mfr_id, String description, BigDecimal price, BigDecimal qty_on_hand) {
         this.product_id = product_id;
         this.mfr_id = mfr_id;
         this.description = description;
         this.price = price;
         this.qty_on_hand = qty_on_hand;
-        this.ordersSet = orders;
     }
 
     public String getMfr_id() {
