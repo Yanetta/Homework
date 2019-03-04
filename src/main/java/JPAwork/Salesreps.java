@@ -58,7 +58,7 @@ public class Salesreps implements Serializable {
     public Salesreps() {
     }
 
-    public Salesreps(BigDecimal empl_num, String name, String title, Offices offices, Date hire_date, BigDecimal age, BigDecimal sales, BigDecimal quota, Salesreps salesreps, Set<Offices> officesSet, Set<Customers> customersSet, Set<Orders> ordersSet, Set<Salesreps> salesrepsSet) {
+    public Salesreps(BigDecimal empl_num, String name, String title, Offices offices, Date hire_date, BigDecimal age, BigDecimal sales, BigDecimal quota, Salesreps salesreps) {
         this.empl_num = empl_num;
         this.name = name;
         this.title = title;
@@ -68,10 +68,7 @@ public class Salesreps implements Serializable {
         this.sales = sales;
         this.quota = quota;
         this.salesreps = salesreps;
-        this.officesSet = officesSet;
-        this.customersSet = customersSet;
-        this.ordersSet = ordersSet;
-        this.salesrepsSet = salesrepsSet;
+
     }
 
     public BigDecimal getEmpl_num() {
@@ -102,24 +99,8 @@ public class Salesreps implements Serializable {
         return offices;
     }
 
-    public void setOffices(Offices rep_office) {
-        this.offices = rep_office;
-    }
-
-    public Set<Customers> getCustomersSet() {
-        return customersSet;
-    }
-
-    public void setCustomersSet(Set<Customers> customers) {
-        this.customersSet = customers;
-    }
-
-    public Set<Orders> getOrdersSet() {
-        return ordersSet;
-    }
-
-    public void setOrdersSet(Set<Orders> orders) {
-        this.ordersSet = orders;
+    public void setOffices(Offices offices) {
+        this.offices = offices;
     }
 
     public Date getHire_date() {
@@ -158,16 +139,32 @@ public class Salesreps implements Serializable {
         return salesreps;
     }
 
-    public void setSalesreps(Salesreps manager) {
-        this.salesreps = manager;
+    public void setSalesreps(Salesreps salesreps) {
+        this.salesreps = salesreps;
     }
 
     public Set<Offices> getOfficesSet() {
         return officesSet;
     }
 
-    public void setOfficesSet(Set<Offices> offices) {
-        this.officesSet = offices;
+    public void setOfficesSet(Set<Offices> officesSet) {
+        this.officesSet = officesSet;
+    }
+
+    public Set<Customers> getCustomersSet() {
+        return customersSet;
+    }
+
+    public void setCustomersSet(Set<Customers> customersSet) {
+        this.customersSet = customersSet;
+    }
+
+    public Set<Orders> getOrdersSet() {
+        return ordersSet;
+    }
+
+    public void setOrdersSet(Set<Orders> ordersSet) {
+        this.ordersSet = ordersSet;
     }
 
     public Set<Salesreps> getSalesrepsSet() {
