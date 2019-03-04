@@ -82,10 +82,10 @@ public class HibOrderDaoImpl implements OrderDao {
                 LOG.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
-        } finally {
-            if (sessionObj != null) {
-                sessionObj.close();
-            }
+//        } finally {
+//            if (sessionObj != null) {
+//                sessionObj.close();
+//            }
         }
         return orders;
     }
@@ -130,10 +130,10 @@ public class HibOrderDaoImpl implements OrderDao {
         try {
             sessionObj = buildSessionFactory().openSession();
             sessionObj.beginTransaction();
-            Orders updatedOrder = (Orders) sessionObj.load(Orders.class, order.getOrder_num());
-            updatedOrder.setQty(order.getQty());
-            updatedOrder.setAmount(order.getAmount());
-            updatedOrder.setMfr(order.getMfr);
+            Orders orders = (Orders) sessionObj.load(Orders.class, order.getOrder_num());
+            orders.setQty(order.getQty());
+            orders.setAmount(order.getAmount());
+            orders.setMfr(order.getMfr());
             sessionObj.getTransaction().commit();
            isSuccessful = true;
         } catch (HibernateException hiException) {

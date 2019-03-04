@@ -17,12 +17,11 @@ import static org.junit.Assert.assertTrue;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OrdersDaoImplTestHib {
     private static final BigDecimal ALREADY_EXIST_ORDER = BigDecimal.valueOf(113042);
-    private static final BigDecimal NEW_ORDER = BigDecimal.valueOf(222223);
 
     private HibOrderDaoImpl orderDa = new HibOrderDaoImpl();
 
-    private Orders order = new Orders(NEW_ORDER, null, null, null, "REI", null, BigDecimal.valueOf(500), BigDecimal.valueOf(600));
-    private Orders orderUpd = new Orders(NEW_ORDER, null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
+    private Orders order = new Orders(BigDecimal.valueOf(222223), null, null, null, "REI", null, BigDecimal.valueOf(500), BigDecimal.valueOf(600));
+    private Orders orderUpd = new Orders(BigDecimal.valueOf(113042), null, null, null, "RRR", null, BigDecimal.valueOf(800), BigDecimal.valueOf(900));
 
     @Test
     public void test3InsertOrder() throws SQLException {
@@ -36,9 +35,9 @@ public class OrdersDaoImplTestHib {
 
     @Test
     public void test1FindOrderById() throws SQLException {
-        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices());
+       System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getCustomers());
-        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
+       System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts().getOrdersSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOffices().getSalesrepsSet());
@@ -47,6 +46,7 @@ public class OrdersDaoImplTestHib {
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOfficesSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getOrdersSet());
         System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getSalesreps().getSalesrepsSet());
+        System.out.println(orderDa.findOrderById(ALREADY_EXIST_ORDER).getProducts());
     }
 
     @Test
