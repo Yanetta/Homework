@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CustomersDaoImplTest1 {
+public class CustomersDaoImpl1Test {
 
     private CustomersDaoImpl customersDao = new CustomersDaoImpl();
 ////    Customers customer = new Customers(BigDecimal.valueOf(2222),
