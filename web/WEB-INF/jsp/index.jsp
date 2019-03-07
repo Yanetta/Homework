@@ -22,7 +22,7 @@
 </head>
 <body>
 <h1>Hello Mate!</h1>
-<FORM METHOD="GET" action="/Homework_war_exploded/jsp">
+<FORM METHOD="GET" action="/Homework_war_exploded/jspp">
   Please enter groupId: <BR>
   <TEXTAREA NAME="groupId" ROWS="1"></TEXTAREA>
   <BR> <INPUT TYPE="SUBMIT" VALUE="Submit">
