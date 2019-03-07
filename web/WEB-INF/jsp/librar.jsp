@@ -10,7 +10,7 @@
     Library library = (Library) request.getAttribute("model");
     if (library != null) {
 %>
-<h3>You have selected mateGroup:</h3>
+<h3>You have selected Library:</h3>
 <h5>
     Id=<%=library.getId()%></h5>
 <table border="2">
