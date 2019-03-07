@@ -16,7 +16,7 @@
 <table border="2">
     <tr>
         <th>Book</th>
-        <th>Year of born</th>
+        <th>Name</th>
     </tr>
     <c:forEach items="<%=library.getBooks()%>" var="book"
                varStatus="status">
