@@ -51,4 +51,23 @@
         <load-on-startup>3</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>jersey-serlvet-jsp</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>jsppage</param-value>
+        </init-param>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>jsppage.AppConfig</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jersey-serlvet-jsp</servlet-name>
+        <url-pattern>/jsp/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
