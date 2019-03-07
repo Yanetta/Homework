@@ -29,5 +29,8 @@
         <%
     }
 %>
+    <FORM METHOD="GET" action="/Homework_war_exploded/book/libr">
+    <INPUT TYPE="SUBMIT" VALUE="Return">
+</FORM>
 </body>
 </html>
