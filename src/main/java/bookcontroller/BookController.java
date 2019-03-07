@@ -17,9 +17,9 @@ public class BookController {
     @GET
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
-    public Viewable libr(@QueryParam("id") String groupId) {
+    public Viewable libr(@QueryParam("id") String id) {
 
-        if (groupId != null && groupId.equals("" + library.getId())) {
+        if (id != null && id.equals("" + library.getId())) {
             return new Viewable("/librar", library);
         }
         return new Viewable("/libr");
