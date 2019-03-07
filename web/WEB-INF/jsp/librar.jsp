@@ -1,20 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: witch
-  Date: 07.03.2019
-  Time: 11:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
-
 </html>
 <%@page import="controller.Library"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -23,13 +6,6 @@
     <title>JSP lib Page</title>
 </head>
 <body>
-<h1>Hello book worm!</h1>
-<FORM METHOD="GET" action="/Homework_war_exploded/book/libr">
-    Please enter LibraryId: <BR>
-    <TEXTAREA NAME="id" ROWS="1"></TEXTAREA>
-    <BR> <INPUT TYPE="SUBMIT" VALUE="Submit">
-</FORM>
-
 <%
     Library library = (Library) request.getAttribute("model");
     if (library != null) {
@@ -49,12 +25,7 @@
         <td>${book.pages}</td>
     </tr>
     </c:forEach>
-    <%--</table>--%>
-    <%--<h5>room on ${model.room.street} street, in ${model.room.city}</h5>--%>
-    <%--<ul>--%>
-    <%--<li><%=mateGroup.getHumanResources()%></li>--%>
-    <%--</ul>--%>
-        <%=library%>
+    </table>
         <%
     }
 %>
