@@ -23,7 +23,7 @@ public class Burger extends AbstractMeal {
 
     @Override
     public String[] getIngredients() {
-        return new String[0];
+        return ingredients;
     }
 
     public void setIngredients(String[] ingredients) {
