@@ -36,7 +36,7 @@ public class Burger extends AbstractMeal {
                 "name=" + getName() +
                 ", weight=" + getWeight() +
                 ", kalories=" + getKalories() +
-                ", ingredients=" + getIngredients().toString() +
+                ", ingredients=" + Arrays.asList(ingredients).toString()  +
                 '}';
     }
 }
