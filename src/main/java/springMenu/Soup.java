@@ -23,7 +23,7 @@ public class Soup extends AbstractMeal {
 
     @Override
     public String[] getIngredients() {
-        return new String[0];
+        return ingredients;
     }
 
     public void setIngredients(String[] ingredients) {
@@ -36,7 +36,7 @@ public class Soup extends AbstractMeal {
                 "name=" + getName() +
                 ", weight=" + getWeight() +
                 ", kalories=" + getKalories() +
-                ", ingredients=" + getIngredients().toString() +
+                ", ingredients=" + Arrays.toString(ingredients) +
                 '}';
     }
 }
