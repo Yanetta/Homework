@@ -1,9 +1,5 @@
 package springMenu;
 
-import animalSpr.Animal;
-import animalSpr.Cat;
-import animalSpr.Dog;
-import animalSpr.Mouse;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

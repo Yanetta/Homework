@@ -2,6 +2,8 @@ package springMenu;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+
 @Component("soup")
 public class Soup extends AbstractMeal {
     String[] ingredients = {"potato", "onion"};
