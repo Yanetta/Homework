@@ -38,6 +38,8 @@ public class CustomersDaoImplTestHib {
             System.out.println(customersDao.findCustomerById(BigDecimal.valueOf(2105)).getOrdersSet());
             // assertNotNull(customers);
         }
+
+
     }
 
 

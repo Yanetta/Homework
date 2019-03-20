@@ -33,7 +33,7 @@ FROM
     INNER JOIN customers   cu ON ord.cust = cu.cust_num;
 
 SELECT
-    name,
+    sort,
     city,
     region
 FROM
@@ -41,7 +41,7 @@ FROM
     INNER JOIN offices     o ON s.rep_office = o.office;
 
 SELECT
-    name,
+    sort,
     city,
     title
 FROM
@@ -49,7 +49,7 @@ FROM
     INNER JOIN offices     o1 ON s.empl_num = o1.mgr;
 
 SELECT
-    name,
+    sort,
     city,
     title
 FROM
@@ -71,7 +71,7 @@ SELECT
     order_num,
     amount,
     company,
-    name
+    sort
 FROM
     orders      ord
     INNER JOIN customers   cu ON ord.cust = cu.cust_num
@@ -83,7 +83,7 @@ SELECT
     order_num,
     amount,
     company,
-    name
+    sort
 FROM
     orders      ord
     INNER JOIN customers   cu ON ord.cust = cu.cust_num
@@ -95,7 +95,7 @@ SELECT
     order_num,
     amount,
     company,
-    name,
+    sort,
     city
 FROM
     orders      ord
@@ -109,13 +109,13 @@ SELECT
     order_num,
     amount,
     order_date,
-    name
+    sort
 FROM
     orders      ord
     INNER JOIN salesreps   sal ON ord.order_date = sal.hire_date;
 
 SELECT
-    name,
+    sort,
     quota,
     city,
     target
@@ -124,7 +124,7 @@ FROM
     INNER JOIN offices     off ON sal.quota > off.target;
 
 SELECT
-    name,
+    sort,
     sal.sales,
     city
 FROM
@@ -146,35 +146,35 @@ FROM
     INNER JOIN offices     off ON sal.rep_office = off.office;
 
 SELECT
-    name
+    sort
 FROM
     salesreps
 WHERE
     manager = empl_num;
 
 SELECT
-    emps.name,
-    mgrs.name
+    emps.sort,
+    mgrs.sort
 FROM
     salesreps   emps 
     INNER JOIN salesreps   mgrs on emps.manager = mgrs.empl_num;
 
 SELECT
-    salesreps.name,
-    mgrs.name
+    salesreps.sort,
+    mgrs.sort
 FROM
     salesreps
     INNER JOIN salesreps mgrs ON salesreps.manager = mgrs.empl_num;
 
 SELECT
-    sal.name,
-    mgrs.name
+    sal.sort,
+    mgrs.sort
 FROM
     salesreps sal 
     INNER JOIN salesreps mgrs on sal.manager = mgrs.empl_num;
 
 SELECT
-    salesreps.name,
+    salesreps.sort,
     salesreps.quota,
     mgrs.quota
 FROM
@@ -183,9 +183,9 @@ FROM
                                  AND salesreps.quota > mgrs.quota;
 
 SELECT
-    emps.name,
+    emps.sort,
     emp_office.city,
-    mgrs.name,
+    mgrs.sort,
     mgr_office.city
 FROM
     salesreps   emps
@@ -195,14 +195,14 @@ FROM
                                      AND emps.rep_office <> mgrs.rep_office;
 
 SELECT
-    salesreps.name,
+    salesreps.sort,
     offices.city
 FROM
     salesreps,
     offices;
 
 SELECT
-    name,
+    sort,
     city
 FROM
     salesreps,
@@ -234,7 +234,7 @@ SELECT
     SUM(amount)
 FROM
     orders      ord
-    INNER JOIN salesreps   sa ON sa.name = 'Дима Маликов'
+    INNER JOIN salesreps   sa ON sa.sort = 'Дима Маликов'
                                AND ord.rep = sa.empl_num;
 
 SELECT
@@ -273,7 +273,7 @@ FROM
     customers;
 
 SELECT
-    COUNT(name)
+    COUNT(sort)
 FROM
     salesreps
 WHERE

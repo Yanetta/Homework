@@ -2,16 +2,16 @@
 <!DOCTYPE xml>
 <xml status="DEBUG" monitorInterval="30">
 	<Properties>
-		<Property name="LOG_PATTERN">
+		<Property sort="LOG_PATTERN">
 			%d{yyyy-MM-dd HH:mm:ss} %-5p %C{3}:%L -- %m%n
 		</Property>
 	</Properties>
 	<Appenders>
-		<Console name="STDOUT" target="SYSTEM_OUT" follow="true">
+		<Console sort="STDOUT" target="SYSTEM_OUT" follow="true">
 			<PatternLayout pattern="${LOG_PATTERN}" />
 		</Console>
 
-		<RollingFile name="PROGRAM-LOGGER-APPENDER" append="true"
+		<RollingFile sort="PROGRAM-LOGGER-APPENDER" append="true"
 			fileName="logs${sys:file.separator}example-logger.log"
 			filePattern="info-%d{yyyy-MM-dd}-%i.log">
 
@@ -24,7 +24,7 @@
 		</RollingFile>
 
 
-		<SMTP name="FEMAIL" 
+		<SMTP sort="FEMAIL"
 		SMTPProtocol="smtps" 
 		SMTPHost="smtp.gmail.com"
 			SMTPPort="465" 
@@ -38,7 +38,7 @@
 	</Appenders>
 	<Loggers>
 
-		<AsyncLogger name="error-logger" level="ERROR">
+		<AsyncLogger sort="error-logger" level="ERROR">
 			<AppenderRef ref="FEMAIL" />
 		</AsyncLogger>
 

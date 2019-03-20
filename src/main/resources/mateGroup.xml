@@ -2,7 +2,7 @@
 <MateGroup>
     <teacher>
         <daysOfVacation>30</daysOfVacation>
-        <name>Serhii</name>
+        <sort>Serhii</sort>
         <salary>666</salary>
         <subject>Java</subject>
         <surname>Pasko</surname>
@@ -11,17 +11,17 @@
     <students>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="student">
             <mark>5</mark>
-            <name>Iza</name>
+            <sort>Iza</sort>
             <yearOfBorn>1997</yearOfBorn>
         </student>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="student">
             <mark>4</mark>
-            <name>Abram</name>
+            <sort>Abram</sort>
             <yearOfBorn>1998</yearOfBorn>
         </student>
         <student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="teacher">
             <daysOfVacation>25</daysOfVacation>
-            <name>Moisha</name>
+            <sort>Moisha</sort>
             <salary>666</salary>
             <subject>Python</subject>
             <surname>Stefan</surname>
@@ -34,13 +34,13 @@
     </room>
     <hrs>
         <humanResource>
-            <name>Efiria</name>
+            <sort>Efiria</sort>
             <startWorkYear>2016</startWorkYear>
             <surname></surname>
             <yearOfBorn>1989</yearOfBorn>
         </humanResource>
         <humanResource>
-            <name>Karmen</name>
+            <sort>Karmen</sort>
             <startWorkYear>2015</startWorkYear>
             <surname></surname>
             <yearOfBorn>1990</yearOfBorn>
@@ -53,15 +53,15 @@
     </rector>
     <books>
         <book>
-            <name>Zakhar Berkut</name>
+            <sort>Zakhar Berkut</sort>
             <pages>300</pages>
         </book>
         <book>
-            <name>Kobzar</name>
+            <sort>Kobzar</sort>
             <pages>500</pages>
         </book>
         <book>
-            <name>Kolobok</name>
+            <sort>Kolobok</sort>
             <pages>10</pages>
         </book>
     </books>

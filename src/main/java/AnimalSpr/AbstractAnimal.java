@@ -10,6 +10,6 @@ public abstract class AbstractAnimal implements Animal {
 
     @Override
     public String toString() {
-        return "AbstractAnimal [getName()=" + getName() + ", getVoice()=" + getVoice();
+        return "AbstractAnimal [getSort()=" + getName() + ", getVoice()=" + getVoice();
     }
 }

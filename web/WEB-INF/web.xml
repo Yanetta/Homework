@@ -4,90 +4,90 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet-mapping>
-        <servlet-name>jersey-serlvet</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>jersey-serlvet</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>workWithRest</param-value>
-        </init-param>
+    <!--<servlet-mapping>-->
+        <!--<servlet-sort>jersey-serlvet</servlet-sort>-->
+        <!--<url-pattern>/rest/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet>-->
+        <!--<servlet-sort>jersey-serlvet</servlet-sort>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-sort>jersey.workSpringData.config.server.provider.packages</param-sort>-->
+            <!--<param-value>workWithRest</param-value>-->
+        <!--</init-param>-->
 
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-
-    <servlet-mapping>
-        <servlet-name>tomcat</servlet-name>
-        <url-pattern>/tomcat/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>tomcat</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>workTomcat</param-value>
-        </init-param>
-
-        <load-on-startup>2</load-on-startup>
-    </servlet>
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
 
 
-    <servlet-mapping>
-        <servlet-name>controller</servlet-name>
-        <url-pattern>/controller/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>controller</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>controller</param-value>
-        </init-param>
+    <!--<servlet-mapping>-->
+        <!--<servlet-sort>tomcat</servlet-sort>-->
+        <!--<url-pattern>/tomcat/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet>-->
+        <!--<servlet-sort>tomcat</servlet-sort>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-sort>jersey.workSpringData.config.server.provider.packages</param-sort>-->
+            <!--<param-value>workTomcat</param-value>-->
+        <!--</init-param>-->
 
-        <load-on-startup>3</load-on-startup>
-    </servlet>
+        <!--<load-on-startup>2</load-on-startup>-->
+    <!--</servlet>-->
 
-    <servlet>
-        <servlet-name>jersey-serlvet-jsp</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>jsppage</param-value>
-        </init-param>
-        <init-param>
-            <param-name>javax.ws.rs.Application</param-name>
-            <param-value>jsppage.AppConfig</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>jersey-serlvet-jsp</servlet-name>
-        <url-pattern>/jspp/*</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-sort>controller</servlet-sort>-->
+        <!--<url-pattern>/controller/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet>-->
+        <!--<servlet-sort>controller</servlet-sort>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-sort>jersey.workSpringData.config.server.provider.packages</param-sort>-->
+            <!--<param-value>controller</param-value>-->
+        <!--</init-param>-->
 
-    <servlet>
-        <servlet-name>bookcontroller</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>bookcontroller</param-value>
-        </init-param>
-        <init-param>
-            <param-name>javax.ws.rs.Application</param-name>
-            <param-value>bookcontroller.AppConfig</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+        <!--<load-on-startup>3</load-on-startup>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>bookcontroller</servlet-name>
-        <url-pattern>/book/*</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-sort>jersey-serlvet-jsp</servlet-sort>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-sort>jersey.workSpringData.config.server.provider.packages</param-sort>-->
+            <!--<param-value>jsppage</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-sort>javax.ws.rs.Application</param-sort>-->
+            <!--<param-value>jsppage.AppConfig</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-sort>jersey-serlvet-jsp</servlet-sort>-->
+        <!--<url-pattern>/jspp/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-sort>bookcontroller</servlet-sort>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-sort>jersey.workSpringData.config.server.provider.packages</param-sort>-->
+            <!--<param-value>bookcontroller</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-sort>javax.ws.rs.Application</param-sort>-->
+            <!--<param-value>bookcontroller.AppConfig</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-sort>bookcontroller</servlet-sort>-->
+        <!--<url-pattern>/book/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 
 </web-app>

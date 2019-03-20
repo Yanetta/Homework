@@ -21,7 +21,7 @@
     <c:forEach items="<%=library.getBooks()%>" var="book"
                varStatus="status">
     <tr>
-        <td>${book.name}</td>
+        <td>${book.sort}</td>
         <td>${book.pages}</td>
     </tr>
     </c:forEach>

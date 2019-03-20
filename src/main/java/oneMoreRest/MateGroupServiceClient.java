@@ -108,7 +108,7 @@ public class MateGroupServiceClient {
 //    public Response deleteHR(@PathParam("name") String name, @PathParam("groupId") int groupId) {
 //        MateGroup mateGroup = mateGroups.get(groupId);
 //        if (mateGroup != null) {
-//            mateGroup.getHumanResources().removeIf(hr -> hr.getName().equals(name));
+//            mateGroup.getHumanResources().removeIf(hr -> hr.getSort().equals(name));
 //            return Response.status(Status.ACCEPTED).entity(mateGroup).type(MediaType.APPLICATION_JSON).build();
 //        }
 //        return Response.status(Status.NOT_FOUND).build();
@@ -149,7 +149,7 @@ public class MateGroupServiceClient {
 //    public Response getCertainHr(@PathParam("name") String name, @PathParam("groupId") int groupId) {
 //        MateGroup mateGroup = mateGroups.get(groupId);
 //        if (mateGroup != null) {
-//            return Response.status(Status.OK).entity(mateGroup.getHumanResources().stream().filter(as -> as.getName().equals(name)).findAny().get()).type(MediaType.APPLICATION_JSON).build();
+//            return Response.status(Status.OK).entity(mateGroup.getHumanResources().stream().filter(as -> as.getSort().equals(name)).findAny().get()).type(MediaType.APPLICATION_JSON).build();
 //        }
 //        return Response.status(Status.NOT_FOUND).build();
 //    }

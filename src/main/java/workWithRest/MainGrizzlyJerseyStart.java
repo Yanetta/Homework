@@ -15,7 +15,7 @@ import java.util.Map;
             final String baseUri = "http://localhost:9998/";
             final Map<String, String> initParams = new HashMap<String, String>();
 
-            initParams.put("com.sun.jersey.config.property.packages", "workWithRest");
+            initParams.put("com.sun.jersey.workSpringData.config.property.packages", "workWithRest");
             initParams.put("com.sun.jersey.api.json.POJOMappingFeature", "true");
 
             System.out.println("Starting grizzly...");

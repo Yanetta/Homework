@@ -43,7 +43,7 @@
   <c:forEach items="<%=mateGroup.getStudents()%>" var="student"
              varStatus="status">
     <tr>
-      <td>${student.name}</td>
+      <td>${student.sort}</td>
       <td>${student.yearOfBorn}</td>
     </tr>
   </c:forEach>

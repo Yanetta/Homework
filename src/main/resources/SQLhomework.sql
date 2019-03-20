@@ -57,13 +57,13 @@ ORDER BY
     cust;
 
 SELECT
-    sa.name,
+    sa.sort,
     SUM(ord.amount)
 FROM
     orders      ord
     INNER JOIN salesreps   sa ON ord.rep = sa.empl_num
 GROUP BY
-    sa.name;
+    sa.sort;
 
 SELECT
     product,
@@ -235,7 +235,7 @@ GROUP BY
 
 INSERT INTO boys (
     nm,
-    name,
+    sort,
     city
 ) VALUES (
     '8',
@@ -256,9 +256,9 @@ FROM
 
 UPDATE girls
 SET
-    name = 'Tanya'
+    sort = 'Tanya'
 WHERE
-    name = 'Tom';
+    sort = 'Tom';
 
 SELECT
     *
@@ -267,7 +267,7 @@ FROM
 
 UPDATE girls
 SET
-    name = 'Alfred',
+    sort = 'Alfred',
     city = 'Frankfurt'
 WHERE
     nm = 2;
@@ -289,7 +289,7 @@ FROM
 DELETE FROM boys
 WHERE
     nm = 8
-    AND name = 'Tom';
+    AND sort = 'Tom';
 
 SELECT
     *
@@ -388,14 +388,14 @@ FROM
 
 SELECT
     s.empl_num,
-    s.name,
+    s.sort,
     SUM(amount)
 FROM
     orders      o
     INNER JOIN salesreps   s ON s.empl_num = o.rep
 GROUP BY
     s.empl_num,
-    s.name;
+    s.sort;
 
 INSERT INTO coloris (
     nm,
